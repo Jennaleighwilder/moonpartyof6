@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-/** Gallery images — uses more of the ~20 photos across the site */
+/** All 20+ gallery images — uses every photo */
 const GALLERY_IMAGES = [
   "/images/gallery-intimate.png",
   "/images/gallery-aprons.png",
@@ -13,6 +13,9 @@ const GALLERY_IMAGES = [
   "/images/gallery-pier.png",
   "/images/gallery-51D1FA81-2F38-49D0-B84F-964D02F20F7E.png",
   "/images/gallery-5CC28067-EE5A-453D-9F63-27E0695C0270.png",
+  "/images/hero-couple.png",
+  "/images/dee.png",
+  "/images/josh.png",
 ];
 
 export function PhotoGallery() {
@@ -22,7 +25,7 @@ export function PhotoGallery() {
         <p className="text-center text-xs uppercase tracking-[0.4em] text-warm-gold mb-6 font-bold">
           real life · real love
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
           {GALLERY_IMAGES.map((src, i) => (
             <motion.div
               key={src}

@@ -1,12 +1,6 @@
 import { SocialLinks } from "@/components/SocialLinks";
 import { SITE, TIKTOK } from "@/lib/siteConfig";
 
-/** Popular TikTok videos — Dee is a public figure, content is public and legal to link */
-const TIKTOK_VIDEOS = [
-  { id: "profile", label: "TikTok profile", href: TIKTOK.profile },
-  // Add video IDs when known: { id: "7123456789", label: "Video title", href: "https://tiktok.com/@moonpartyof6/video/7123456789" },
-];
-
 export default function MediaPressPage() {
   return (
     <div>
@@ -25,6 +19,15 @@ export default function MediaPressPage() {
             </a>
           </div>
 
+          {/* TikTok — video links + CTA */}
+          <div className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-charcoal to-classic-black text-pearl-white">
+            <h3 className="font-display text-2xl font-semibold mb-2">TikTok — @moonpartyof6</h3>
+            <p className="text-pearl-white/80 mb-6">Viral moments, date ideas, and real marriage content.</p>
+            <a href={TIKTOK.profile} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-deep-red text-pearl-white font-bold rounded-lg hover:bg-mahogany transition-all hover:scale-105">
+              Watch on TikTok →
+            </a>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6">
             <div className="p-6 bg-white border border-charcoal/10 rounded-lg">
               <h3 className="font-display text-xl font-semibold mb-2">Podcast Appearances</h3>
@@ -34,19 +37,10 @@ export default function MediaPressPage() {
               </a>
             </div>
             <div className="p-6 bg-white border border-charcoal/10 rounded-lg">
-              <h3 className="font-display text-xl font-semibold mb-2">TikTok — Popular Videos</h3>
-              <p className="text-charcoal mb-4">Viral moments from @moonpartyof6</p>
-              <ul className="space-y-2">
-                {TIKTOK_VIDEOS.map((v) => (
-                  <li key={v.id}>
-                    <a href={v.href} target="_blank" rel="noopener noreferrer" className="text-deep-red hover:underline text-sm">
-                      {v.label} →
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <a href={TIKTOK.profile} target="_blank" rel="noopener noreferrer" className="text-deep-red hover:underline text-sm mt-3 inline-block">
-                View all on TikTok →
+              <h3 className="font-display text-xl font-semibold mb-2">Instagram Reels</h3>
+              <p className="text-charcoal mb-4">Short-form content on Instagram</p>
+              <a href={SITE.handleLink} target="_blank" rel="noopener noreferrer" className="text-deep-red hover:underline text-sm">
+                View @moonpartyof6 on Instagram →
               </a>
             </div>
           </div>

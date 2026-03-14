@@ -61,23 +61,23 @@ function RevealCard({ title, text, image }: { title: string; text: string; image
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`
-        relative overflow-hidden rounded-[24px] min-h-[280px]
-        transition-all duration-300 ease-out
+        group relative overflow-hidden rounded-[24px] min-h-[280px]
+        transition-all duration-500 ease-out
         ${hovered
-          ? "border border-warm-gold/40 shadow-[0_15px_40px_rgba(169,111,19,0.12)] -translate-y-1"
-          : "border border-transparent opacity-90"
+          ? "border border-warm-gold/50 shadow-[0_20px_50px_rgba(169,111,19,0.2)] -translate-y-2 scale-[1.02]"
+          : "border border-transparent opacity-95"
         }
       `}
     >
       <div className="absolute inset-0">
-        <Image src={image} alt="" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
+        <Image src={image} alt="" fill className={`object-cover object-top transition-all duration-700 ${hovered ? "scale-110" : "scale-100"}`} sizes="(max-width: 768px) 100vw, 33vw" />
+        <div className={`absolute inset-0 transition-all duration-500 ${hovered ? "bg-gradient-to-t from-deep-red/95 via-mahogany/60 to-warm-gold/30" : "bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"}`} />
       </div>
       <div className="relative z-10 p-8 flex flex-col justify-end min-h-[280px]">
         <h3 className="font-display text-2xl font-normal text-pearl-white mb-3 drop-shadow-lg">
           {title}
         </h3>
-        <p className={`text-pearl-white/95 text-sm leading-relaxed transition-all duration-300 ${hovered ? "opacity-100" : "opacity-80"}`}>{text}</p>
+        <p className={`text-pearl-white/95 text-sm leading-relaxed transition-all duration-500 ${hovered ? "opacity-100" : "opacity-85"}`}>{text}</p>
       </div>
     </div>
   );

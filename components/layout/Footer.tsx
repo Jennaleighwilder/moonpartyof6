@@ -1,6 +1,44 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { SocialLinks } from "@/components/SocialLinks";
 import { SITE } from "@/lib/siteConfig";
+
+function DisplayOptions() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className="text-sleek-silver hover:text-warm-gold text-xs uppercase tracking-wider transition-colors"
+        aria-expanded={open}
+      >
+        Display options
+      </button>
+      {open && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
+          <div className="absolute bottom-full right-0 mb-2 z-50 w-56 p-4 bg-charcoal rounded-lg border border-charcoal/50 shadow-xl">
+            <p className="text-xs text-sleek-silver mb-3">Adjust how the site displays</p>
+            <label className="flex items-center gap-2 cursor-pointer text-sm text-pearl-white/90 mb-2">
+              <input type="checkbox" onChange={(e) => document.documentElement.classList.toggle("adhd-focus", e.target.checked)} className="rounded" />
+              <span>Calm focus (reduced motion, narrower text)</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer text-sm text-pearl-white/90 mb-2">
+              <input type="checkbox" onChange={(e) => document.documentElement.classList.toggle("high-contrast", e.target.checked)} className="rounded" />
+              <span>High contrast</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer text-sm text-pearl-white/90">
+              <input type="checkbox" onChange={(e) => document.documentElement.classList.toggle("reduce-motion", e.target.checked)} className="rounded" />
+              <span>Reduce motion</span>
+            </label>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 const footerLinks = {
   about: [
@@ -87,7 +125,10 @@ export function Footer() {
               {SITE.handle}
             </a>
           </div>
-          <SocialLinks variant="footer" />
+          <div className="flex items-center gap-6">
+            <DisplayOptions />
+            <SocialLinks variant="footer" />
+          </div>
         </div>
       </div>
     </footer>

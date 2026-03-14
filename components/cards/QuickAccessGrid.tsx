@@ -25,10 +25,10 @@ export function QuickAccessGrid() {
             >
               <Link
                 href={card.href}
-                className="block p-8 rounded-xl border border-charcoal/5 bg-white hover:border-warm-gold/40 hover:shadow-xl transition-all duration-300 group"
+                className="block p-8 rounded-xl border border-charcoal/5 bg-white hover:border-deep-red/30 hover:shadow-[0_12px_40px_rgba(122,12,24,0.08)] hover:-translate-y-1 transition-all duration-400 group"
               >
                 <span className="text-xs uppercase tracking-[0.3em] text-warm-gold font-bold">{card.label}</span>
-                <h3 className="font-display text-2xl font-normal text-charcoal mt-3 group-hover:text-warm-gold transition-colors leading-[1.4]">
+                <h3 className="font-display text-2xl font-normal text-charcoal mt-3 group-hover:text-deep-red transition-colors duration-300 leading-[1.4]">
                   {card.title}
                 </h3>
                 <p className="text-charcoal/70 text-sm mt-2 leading-relaxed">{card.desc}</p>

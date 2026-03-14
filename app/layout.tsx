@@ -3,7 +3,6 @@ import { Bodoni_Moda, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import { AccessibilityBar } from "@/components/layout/AccessibilityBar";
 import { FloatingStartHere } from "@/components/layout/FloatingStartHere";
 import { ChatButton } from "@/components/ChatButton";
 
@@ -38,7 +37,6 @@ export default function RootLayout({
       className={`${bodoniModa.variable} ${montserrat.variable}`}
     >
       <body className="font-sans bg-cream text-charcoal antialiased">
-        <AccessibilityBar />
         <Navigation />
         <main>{children}</main>
         <FloatingStartHere />

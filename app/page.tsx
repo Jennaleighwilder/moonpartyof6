@@ -73,7 +73,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Social */}
+      {/* Social + Videos */}
       <section className="section-padding bg-cream border-t border-charcoal/10">
         <div className="max-w-xl mx-auto text-center">
           <p className="text-[10px] uppercase tracking-[0.35em] text-charcoal/40 mb-4">follow</p>
@@ -81,6 +81,9 @@ export default function HomePage() {
           <a href={SITE.handleLink} target="_blank" rel="noopener noreferrer" className="text-warm-gold hover:text-gold-light font-bold text-xs mt-3 inline-block tracking-[0.25em] uppercase">
             {SITE.handle}
           </a>
+          <Link href="/media-press" className="block mt-6 text-deep-red hover:text-mahogany font-medium text-sm">
+            Watch on TikTok & Instagram →
+          </Link>
         </div>
       </section>
     </>
