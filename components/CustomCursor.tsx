@@ -7,13 +7,21 @@ export function CustomCursor() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
     setIsDesktop(window.matchMedia("(pointer: fine)").matches);
+    setReduceMotion(document.documentElement.classList.contains("reduce-motion") || window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const obs = new MutationObserver(() => setReduceMotion(document.documentElement.classList.contains("reduce-motion")));
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
-    if (!isDesktop) return;
+    if (!isDesktop || reduceMotion) {
+      document.body.style.cursor = "";
+      return;
+    }
     const move = (e: MouseEvent) => setMouse({ x: e.clientX, y: e.clientY });
     const enter = () => setHovering(true);
     const leave = () => setHovering(false);
@@ -34,9 +42,9 @@ export function CustomCursor() {
         el.removeEventListener("mouseleave", leave);
       });
     };
-  }, [isDesktop]);
+  }, [isDesktop, reduceMotion]);
 
-  if (!isDesktop || typeof window === "undefined") return null;
+  if (!isDesktop || reduceMotion || typeof window === "undefined") return null;
 
   return (
     <motion.div

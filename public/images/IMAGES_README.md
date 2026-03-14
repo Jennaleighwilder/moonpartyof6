@@ -1,19 +1,26 @@
-# Add Your Photos Here
+# Hero & Gallery Images
 
-**Drop your photos in this folder.** The site will use them automatically.
+## CRITICAL: Hero Image
 
-## Files to add
+**The hero must be the Maine photo** — snow, Dee in camel hat + black leggings, Josh in grey/white pullover. Cinematic, romantic.
+
+**Do NOT use:** Screenshots of messages, text convos, or design mockups.
 
 | File | Where it appears |
 |------|------------------|
-| `hero-couple.jpg` | Hero background (homepage) — Dee + Josh together, cinematic |
-| `dee.jpg` | Mrs. Moon page + homepage "Meet the Moons" card |
-| `josh.jpg` | Mr. Moon page + homepage "Meet the Moons" card |
+| `hero-maine.png` or `hero-couple.png` | Hero background (homepage) |
+| `gallery-beach.png` | Hero floating card (different from background) |
+| `dee.png` | Mrs. Moon page + Meet the Moons |
+| `josh.png` | Mr. Moon page + Meet the Moons |
 
 ## Specs
 
-- **Hero**: 1920×1080 or larger, landscape, romantic couple shot
-- **Portraits**: 800×800 (square) or similar, headshots or 3/4
-- **Format**: JPG or WebP
+- **Hero**: 1920×1080 or larger, landscape, Maine snow photo
+- **Floating card**: Different image than hero (e.g. beach, couple shot)
+- **Portraits**: 800×800 (square), headshots or 3/4
+- **Format**: PNG, JPG, or WebP
 
-Until you add them, the hero uses a placeholder and portraits show ✨ / 🌟.
+## To fix the hero
+
+1. Replace `hero-maine.png` with the actual Maine photo (snow, Dee in camel hat, Josh in grey pullover).
+2. Update `components/hero/Hero.tsx` line 7: set `HERO_BG = "/images/hero-maine.png"`.

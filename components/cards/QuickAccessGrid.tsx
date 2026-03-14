@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { StaggerChildren, StaggerItem } from "@/components/motion/ScrollReveal";
 
 const CARDS = [
   { href: "/our-story", label: "our story", title: "how we met", desc: "blended family, second chance, doing marriage differently. romance, role play, the hard work.", badge: "read more →", comingSoon: false },
@@ -14,15 +14,9 @@ export function QuickAccessGrid() {
   return (
     <section className="section-padding bg-vellum">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {CARDS.map((card, i) => (
-            <motion.div
-              key={card.href}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-            >
+        <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" delay={0.1}>
+          {CARDS.map((card) => (
+            <StaggerItem key={card.href}>
               <Link
                 href={card.href}
                 className="block p-8 rounded-sm border border-charcoal/5 bg-white hover:border-charcoal/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group tap-scale"
@@ -36,9 +30,9 @@ export function QuickAccessGrid() {
                   {card.badge}
                 </span>
               </Link>
-            </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

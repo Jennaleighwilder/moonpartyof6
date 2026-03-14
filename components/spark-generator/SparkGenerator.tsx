@@ -8,18 +8,19 @@ import { DateNightShareBar } from "./DateNightShareBar";
 import { InvitationCard } from "./InvitationCard";
 import { BlueprintMap } from "./BlueprintMap";
 
-const VIBES = [
-  { id: "stayIn", label: "Stay In", desc: "Couch, candles, connection" },
-  { id: "goOut", label: "Go Out", desc: "Get dressed, make a reservation" },
-  { id: "reconnect", label: "Reconnect", desc: "After conflict, when you need each other" },
-  { id: "surpriseMe", label: "Surprise Me", desc: "Dealer's choice" },
+/** Esoteric: "What is the current mood of your union?" — maps to vibe */
+const MOODS = [
+  { id: "tender", label: "Tender", desc: "We need to slow down", vibe: "reconnect" as const, spice: "tender" as const },
+  { id: "playful", label: "Playful", desc: "We want to flirt", vibe: "goOut" as const, spice: "flirty" as const },
+  { id: "heated", label: "Heated", desc: "We're ready for more", vibe: "stayIn" as const, spice: "heated" as const },
+  { id: "seeking", label: "Seeking", desc: "Surprise us", vibe: "surpriseMe" as const, spice: "flirty" as const },
 ];
 
-const SPICE_LEVELS = [
-  { id: "tender", label: "Tender", desc: "Heart connection, emotional intimacy" },
-  { id: "flirty", label: "Flirty", desc: "Playful energy, teasing" },
-  { id: "heated", label: "Heated", desc: "Turn it up 🔥" },
-  { id: "inferno", label: "Inferno", desc: "…you know 🌶️" },
+/** Esoteric: "Which element draws you tonight?" — refines spice */
+const ELEMENTS = [
+  { id: "fire", label: "Fire", desc: "Passion, spark", spice: "heated" as const },
+  { id: "water", label: "Water", desc: "Flow, intimacy", spice: "tender" as const },
+  { id: "earth", label: "Earth", desc: "Grounded, present", spice: "tender" as const },
 ];
 
 const TIME_OPTIONS = [
@@ -32,18 +33,20 @@ const TIME_OPTIONS = [
 
 export function SparkGenerator({ variant = "default" }: { variant?: "default" | "editorial" }) {
   const [step, setStep] = useState(0);
-  const [vibe, setVibe] = useState("");
-  const [spice, setSpice] = useState("");
+  const [mood, setMood] = useState<typeof MOODS[0] | null>(null);
+  const [element, setElement] = useState<typeof ELEMENTS[0] | null>(null);
   const [time, setTime] = useState("");
   const [area, setArea] = useState("");
   const [result, setResult] = useState<ReturnType<typeof getDateIdea> | null>(null);
 
   const isEditorial = variant === "editorial";
+  const vibe = mood?.vibe ?? "";
+  const spice = element?.spice ?? mood?.spice ?? "tender";
 
   const handleSubmit = () => {
-    if (step === 0 && vibe) {
+    if (step === 0 && mood) {
       setStep(1);
-    } else if (step === 1 && spice) {
+    } else if (step === 1 && element) {
       setStep(2);
     } else if (step === 2 && time) {
       setStep(3);
@@ -77,34 +80,35 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className={`p-8 rounded-2xl ${
+              className={`p-8 md:p-10 rounded-2xl ${
                 isEditorial
-                  ? "bg-pearl-white/5 border border-pearl-white/20 backdrop-blur-sm"
-                  : "bg-white border border-warm-gold/20 shadow-[0_15px_40px_rgba(169,111,19,0.08)]"
+                  ? "bg-pearl-white/5 border border-pearl-white/20 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
+                  : "bg-white/80 backdrop-blur-sm border border-warm-gold/20 shadow-[0_15px_40px_rgba(169,111,19,0.08)]"
               }`}
             >
               {step === 0 && (
                 <div>
-                  <h3 className={`font-display text-xl font-semibold mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
-                    What&apos;s the vibe?
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 1 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                    What is the current mood of your union?
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
-                    {VIBES.map((v) => (
+                    {MOODS.map((m) => (
                       <button
-                        key={v.id}
-                        onClick={() => setVibe(v.id)}
-                        className={`p-4 rounded-xl border-2 text-left transition-all ${
+                        key={m.id}
+                        onClick={() => setMood(m)}
+                        className={`p-4 rounded-xl border-2 text-left transition-all tap-scale ${
                           isEditorial
-                            ? vibe === v.id
+                            ? mood?.id === m.id
                               ? "border-pearl-white bg-pearl-white/20 text-pearl-white"
                               : "border-pearl-white/30 hover:border-pearl-white/50 hover:bg-pearl-white/10 text-pearl-white/90"
-                            : vibe === v.id
+                            : mood?.id === m.id
                               ? "border-warm-gold bg-warm-gold/10 text-warm-gold"
                               : "border-charcoal/15 hover:border-warm-gold/40"
                         }`}
                       >
-                        <span className="font-medium block">{v.label}</span>
-                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>{v.desc}</span>
+                        <span className="font-medium block">{m.label}</span>
+                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>{m.desc}</span>
                       </button>
                     ))}
                   </div>
@@ -112,26 +116,28 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 1 && (
                 <div>
-                  <h3 className={`font-display text-xl font-semibold mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
-                    Spice level?
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 2 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                    Which element draws you tonight?
                   </h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    {SPICE_LEVELS.map((s) => (
+                  <div className="grid grid-cols-3 gap-4">
+                    {ELEMENTS.map((e) => (
                       <button
-                        key={s.id}
-                        onClick={() => setSpice(s.id)}
-                        className={`p-4 rounded-xl border-2 text-left transition-all ${
+                        key={e.id}
+                        onClick={() => setElement(e)}
+                        className={`p-4 rounded-xl border-2 text-left transition-all tap-scale ${
                           isEditorial
-                            ? spice === s.id
+                            ? element?.id === e.id
                               ? "border-pearl-white bg-pearl-white/20 text-pearl-white"
                               : "border-pearl-white/30 hover:border-pearl-white/50 hover:bg-pearl-white/10 text-pearl-white/90"
-                            : spice === s.id
+                            : element?.id === e.id
                               ? "border-warm-gold bg-warm-gold/10 text-warm-gold"
                               : "border-charcoal/15 hover:border-warm-gold/40"
                         }`}
                       >
-                        <span className="font-medium block">{s.label}</span>
-                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>{s.desc}</span>
+                        <span className="font-display text-2xl block mb-1">{e.id === "fire" ? "🔥" : e.id === "water" ? "🌊" : "🌿"}</span>
+                        <span className="font-medium block">{e.label}</span>
+                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>{e.desc}</span>
                       </button>
                     ))}
                   </div>
@@ -139,7 +145,8 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 2 && (
                 <div>
-                  <h3 className={`font-display text-xl font-semibold mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 3 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
                     How much time do you have?
                   </h3>
                   <div className="flex flex-wrap gap-3">
@@ -165,7 +172,8 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 3 && (
                 <div>
-                  <h3 className={`font-display text-xl font-semibold mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 4 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
                     Where are you?
                   </h3>
                   <p className={`text-sm mb-4 ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>
@@ -210,8 +218,8 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                 <button
                   onClick={handleSubmit}
                   disabled={
-                    (step === 0 && !vibe) ||
-                    (step === 1 && !spice) ||
+                    (step === 0 && !mood) ||
+                    (step === 1 && !element) ||
                     (step === 2 && !time)
                   }
                   className={`flex-1 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-xl font-medium ${
@@ -332,8 +340,8 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                 <button
                   onClick={() => {
                     setStep(0);
-                    setVibe("");
-                    setSpice("");
+                    setMood(null);
+                    setElement(null);
                     setTime("");
                     setArea("");
                     setResult(null);

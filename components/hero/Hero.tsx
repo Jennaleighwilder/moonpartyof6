@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const HERO_BG = "/images/hero-maine.png";
+// Hero BG: Maine photo (snow, Dee in camel hat + black leggings, Josh in grey/white pullover)
+// Replace hero-maine.png with the actual Maine photo — NOT a screenshot. Fallback: hero-couple.png
+const HERO_BG = "/images/hero-couple.png";
 const HERO_CARD = "/images/gallery-beach.png";
 
 export function Hero() {

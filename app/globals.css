@@ -132,9 +132,9 @@ html.reduce-motion .ken-burns {
     transform: scale(1.03);
   }
 
-  /* Subhead — wide-tracked minimalist */
+  /* Subhead — wide-tracked minimalist (Montserrat 0.1em per brief) */
   .subhead-editorial {
-    @apply font-sans text-sm uppercase tracking-[0.1em] font-light;
+    @apply font-sans text-xs uppercase tracking-[0.1em] font-light;
   }
 
   /* Hide scrollbar for carousel */
