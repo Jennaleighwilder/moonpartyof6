@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Hero BG: Maine photo (snow, Dee in camel hat + black leggings, Josh in grey/white pullover)
-// Maine photo: snow, Dee in camel hat, Josh in grey pullover. Fallback: hero-couple.png
-const HERO_BG = "/images/hero-maine.png";
+// Hero BG: use real photo from group — NOT a screenshot. gallery-5CC... is from user's photo set
+const HERO_BG = "/images/gallery-5CC28067-EE5A-453D-9F63-27E0695C0270.png";
 const HERO_CARD = "/images/gallery-intimate.png";
 
 export function Hero() {
@@ -19,13 +18,13 @@ export function Hero() {
       <motion.div
         style={{
           y,
-          backgroundImage: `linear-gradient(120deg, rgba(10,10,10,0.92) 0%, rgba(26,26,26,0.7) 40%, rgba(46,46,46,0.5) 70%, rgba(60,60,60,0.3) 100%), url(${HERO_BG})`,
+          backgroundImage: `linear-gradient(120deg, rgba(10,10,10,0.75) 0%, rgba(20,20,20,0.5) 50%, rgba(30,30,30,0.3) 100%), url(${HERO_BG})`,
           backgroundColor: "#0A0A0A",
           backgroundPosition: "center 30%",
         }}
         className="absolute inset-0 bg-cover bg-no-repeat"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(122,12,24,0.12)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(0,0,0,0.3)_0%,transparent_50%)]" />
 
       <motion.div style={{ opacity }} className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

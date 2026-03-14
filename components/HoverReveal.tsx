@@ -12,7 +12,7 @@ const CARDS = [
   {
     title: "physical connection",
     text: "from spicy texts to slow mornings — keeping the spark alive after kids and chaos.",
-    image: "/images/gallery-aprons.png",
+    image: "/images/gallery-5CC28067-EE5A-453D-9F63-27E0695C0270.png",
   },
   {
     title: "intentional partnership",
@@ -22,7 +22,7 @@ const CARDS = [
   {
     title: "casual moments",
     text: "the everyday magic — coffee, kids, and the in-between that makes marriage real.",
-    image: "/images/gallery-casual.png",
+    image: "/images/gallery-51D1FA81-2F38-49D0-B84F-964D02F20F7E.png",
   },
   {
     title: "travel together",

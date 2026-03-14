@@ -56,7 +56,7 @@ function DateNightCardContent() {
       >
         <div className="absolute inset-0 ken-burns">
           <img
-            src="/images/hero-maine.png"
+            src="/images/gallery-5CC28067-EE5A-453D-9F63-27E0695C0270.png"
             alt=""
             className="w-full h-full object-cover"
             style={{ objectPosition: "center 30%" }}
