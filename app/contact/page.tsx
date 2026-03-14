@@ -14,8 +14,12 @@ export default function ContactPage() {
 
           <div className="mb-10 p-6 bg-white border border-charcoal/10 rounded-xl">
             <p className="text-sm font-medium text-charcoal/70 mb-2">Reach us</p>
-            <a href={`mailto:${CONTACT.email}`} className="text-deep-red font-medium hover:underline block mb-4">
+            <a href={`mailto:${CONTACT.email}`} className="text-deep-red font-medium hover:underline block mb-1">
               {CONTACT.email}
+            </a>
+            <p className="text-charcoal/80 text-sm mb-4">{CONTACT.location}</p>
+            <a href={SITE.beaconsLink} target="_blank" rel="noopener noreferrer" className="text-deep-red font-medium hover:underline block mb-4">
+              All links → beacons.ai/moonpartyof6
             </a>
             <p className="text-sm font-medium text-charcoal/70 mb-2">Follow us</p>
             <SocialLinks variant="inline" showLabels className="mb-2" />

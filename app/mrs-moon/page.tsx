@@ -30,8 +30,18 @@ export default function MrsMoonPage() {
           </div>
           <h1 className="font-display text-4xl font-semibold mb-6">Mrs. Moon — Dee Moon</h1>
           <p className="text-charcoal text-lg leading-relaxed mb-6">
-            Dee holds a Master's in Counseling (Marriage & Family focus) and a Bachelor's in Psychology. Her experience includes crisis hotline work, sexual assault response, pregnancy resources, and volunteer work. She speaks on relationships, communication, and intimacy.
+            Dee holds a Master&apos;s in Counseling (Marriage & Family focus) and a Bachelor&apos;s in Psychology. Her experience includes crisis hotline work, sexual assault response, pregnancy resources, and volunteer work. She speaks on relationships, communication, and intimacy.
           </p>
+
+          <div className="p-6 bg-charcoal/5 border-l-4 border-deep-red rounded-r-lg mb-8">
+            <p className="text-charcoal text-lg leading-relaxed italic mb-2">
+              &quot;We always see what he does for you… but what do you ever do for him?&quot;
+            </p>
+            <p className="text-charcoal leading-relaxed">
+              I want to say this clearly: these videos are not a measure of my value or my worth. This platform isn&apos;t performative. It offers peeks, not the whole picture. So often, when people ask what I&apos;m doing for him, what they&apos;re really asking is, what am I doing to deserve this level of appreciation from my partner — instead of recognizing something much simpler: that this is what mutual love can look like. And I don&apos;t have to &quot;do or prove&quot; anything to earn it. My inherent value is enough. You see the ways he shows up for me because that&apos;s how he loves. But the ways I love him? It doesn&apos;t always look the same. This platform is, in many ways, a love letter to him. I hold the quiet moments, the behind-the-scenes, the unseen — the parts that don&apos;t always end up in a social media clip. I don&apos;t show love in the same ways he loves me, and that&apos;s okay. Because if you&apos;re keeping score, you&apos;ll miss the whole point.
+            </p>
+          </div>
+
           <p className="text-charcoal mb-8">
             Speaking honorarium: travel expenses only. Book Dee for your event, workshop, or retreat.
           </p>

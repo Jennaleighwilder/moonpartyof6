@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Hero: real photos only — NO screenshots. gallery-5CC/51D1 were webpage/style-guide screenshots
-const HERO_BG = "/images/gallery-intimate.png";
-const HERO_CARD = "/images/gallery-hallway.png";
+// Hero: Dee's photos from doc — Maine, St Thomas, couple moments
+const HERO_BG = "/images/dee-doc-12.png";
+const HERO_CARD = "/images/dee-doc-8.png";
 
 export function Hero() {
   const { scrollY } = useScroll();

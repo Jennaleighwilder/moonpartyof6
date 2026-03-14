@@ -3,15 +3,16 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-/** Real photos only — NO screenshots (gallery-5CC, 51D1 were webpage/style-guide). */
+/** Dee's real photos from doc — Maine, St Thomas, couple moments. */
 const GALLERY_IMAGES = [
-  { src: "/images/gallery-intimate.png", rotate: "-2deg" },
-  { src: "/images/gallery-aprons.png", rotate: "1.5deg" },
-  { src: "/images/gallery-hallway.png", rotate: "-1deg" },
-  { src: "/images/gallery-casual.png", rotate: "2deg" },
-  { src: "/images/gallery-pier.png", rotate: "1deg" },
-  { src: "/images/dee.png", rotate: "1.5deg" },
-  { src: "/images/josh.png", rotate: "-1deg" },
+  { src: "/images/dee-doc-12.png", rotate: "-2deg" },
+  { src: "/images/dee-doc-14.png", rotate: "1.5deg" },
+  { src: "/images/dee-doc-8.png", rotate: "-1deg" },
+  { src: "/images/dee-doc-9.png", rotate: "2deg" },
+  { src: "/images/dee-doc-7.png", rotate: "1deg" },
+  { src: "/images/dee-doc-1.png", rotate: "1.5deg" },
+  { src: "/images/dee-doc-2.png", rotate: "-1deg" },
+  { src: "/images/dee-doc-3.png", rotate: "2deg" },
 ];
 
 export function PhotoGallery() {

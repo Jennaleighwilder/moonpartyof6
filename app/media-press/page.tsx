@@ -19,10 +19,29 @@ export default function MediaPressPage() {
             </a>
           </div>
 
+          {/* Featured videos — from TikTok/Reels */}
+          <div className="mb-12">
+            <h3 className="font-display text-2xl font-semibold mb-4">Featured Videos</h3>
+            <p className="text-charcoal mb-6">Viral moments, date ideas, and real marriage content.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <div key={n} className="rounded-xl overflow-hidden border border-charcoal/10 bg-classic-black aspect-[9/16] max-h-[400px] mx-auto">
+                  <video
+                    src={`/videos/video-${n}.mp4`}
+                    controls
+                    playsInline
+                    className="w-full h-full object-cover"
+                    preload="metadata"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* TikTok — video links + CTA */}
           <div className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-charcoal to-classic-black text-pearl-white">
             <h3 className="font-display text-2xl font-semibold mb-2">TikTok — @moonpartyof6</h3>
-            <p className="text-pearl-white/80 mb-6">Viral moments, date ideas, and real marriage content.</p>
+            <p className="text-pearl-white/80 mb-6">More viral moments, date ideas, and real marriage content.</p>
             <a href={TIKTOK.profile} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-deep-red text-pearl-white font-bold rounded-lg hover:bg-mahogany transition-all hover:scale-105">
               Watch on TikTok →
             </a>

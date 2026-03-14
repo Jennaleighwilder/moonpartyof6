@@ -7,22 +7,26 @@ export const SITE = {
   name: "Moonpartyof6",
   tagline: "Intentional marriage in the real world",
   url: "https://moonpartyof6.com",
-  handle: "@moonpartyof6",
+  handle: "@themoonpartyof6",
   /** Primary social — handle links here */
-  handleLink: "https://instagram.com/moonpartyof6",
+  handleLink: "https://instagram.com/themoonpartyof6",
+  /** Link hub */
+  beaconsLink: "https://beacons.ai/moonpartyof6",
+  /** Americas Fav Couple feature */
+  americasFavCoupleLink: "https://americasfavcouple.org/2025/the-moons-8",
 } as const;
 
 export const SOCIALS = [
   {
     id: "instagram",
     label: "Instagram",
-    href: "https://instagram.com/moonpartyof6",
+    href: "https://instagram.com/themoonpartyof6",
     icon: "instagram",
   },
   {
     id: "tiktok",
     label: "TikTok",
-    href: "https://tiktok.com/@moonpartyof6",
+    href: "https://tiktok.com/@themoonpartyof6",
     icon: "tiktok",
   },
   {
@@ -46,31 +50,33 @@ export const SOCIALS = [
 ] as const;
 
 export const CONTACT = {
-  email: "hello@moonpartyof6.com",
+  email: "moonpartyof6@gmail.com",
   /** General inquiry / contact form */
-  inquiryEmail: "hello@moonpartyof6.com",
+  inquiryEmail: "moonpartyof6@gmail.com",
   /** Speaking (Dee) */
-  speakingEmail: "hello@moonpartyof6.com",
+  speakingEmail: "moonpartyof6@gmail.com",
   /** Retreats */
-  retreatsEmail: "hello@moonpartyof6.com",
+  retreatsEmail: "moonpartyof6@gmail.com",
+  /** Location */
+  location: "Cape Canaveral, FL",
 } as const;
 
 /** Dee's personal / professional links */
 export const DEE_SOCIALS = [
-  { label: "Instagram", href: "https://instagram.com/moonpartyof6" },
-  { label: "TikTok", href: "https://tiktok.com/@moonpartyof6" },
-  { label: "YouTube", href: "https://youtube.com/@moonpartyof6" },
+  { label: "Instagram", href: "https://instagram.com/themoonpartyof6" },
+  { label: "TikTok", href: "https://tiktok.com/@themoonpartyof6" },
+  { label: "YouTube", href: "https://youtube.com/@MoonPartyof6" },
 ];
 
 /** Josh's personal / professional links */
 export const JOSH_SOCIALS = [
-  { label: "Instagram", href: "https://instagram.com/moonpartyof6" },
-  { label: "TikTok", href: "https://tiktok.com/@moonpartyof6" },
+  { label: "Instagram", href: "https://instagram.com/themoonpartyof6" },
+  { label: "TikTok", href: "https://tiktok.com/@themoonpartyof6" },
 ];
 
 /** TikTok profile — add popular video IDs here as they're identified */
 export const TIKTOK = {
-  profile: "https://tiktok.com/@moonpartyof6",
+  profile: "https://tiktok.com/@themoonpartyof6",
   /** Popular videos — add video IDs when known, e.g. "7123456789" from tiktok.com/@moonpartyof6/video/7123456789 */
   popularVideos: [] as string[],
 };
