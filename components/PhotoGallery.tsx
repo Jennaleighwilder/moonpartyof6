@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-/** Curated client photos only — no build/design images. Zine: cut-out, rotate, no borders. */
+/** Curated client photos only — no golf, no old couple shots. Zine: cut-out, rotate. */
 const GALLERY_IMAGES = [
   { src: "/images/gallery-intimate.png", rotate: "-2deg" },
   { src: "/images/gallery-aprons.png", rotate: "1.5deg" },
@@ -11,7 +11,7 @@ const GALLERY_IMAGES = [
   { src: "/images/gallery-casual.png", rotate: "2deg" },
   { src: "/images/gallery-beach.png", rotate: "-1.5deg" },
   { src: "/images/gallery-pier.png", rotate: "1deg" },
-  { src: "/images/hero-couple.png", rotate: "-2deg" },
+  { src: "/images/hero-maine.png", rotate: "-2deg" },
   { src: "/images/dee.png", rotate: "1.5deg" },
   { src: "/images/josh.png", rotate: "-1deg" },
 ];

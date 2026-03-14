@@ -44,44 +44,44 @@ export function BackgroundManager() {
 
   return (
     <>
-      {/* Entrance: #0D0D0D Obsidian Silk */}
+      {/* Entrance: clean neutral dark */}
       {roomKey === "entrance" && (
         <div
           className="fixed inset-0 -z-[3] transition-[background] duration-1000"
-          style={{ background: "linear-gradient(180deg, #0D0D0D 0%, #0a0808 50%, #0D0D0D 100%)" }}
+          style={{ background: "linear-gradient(180deg, #111111 0%, #0f0f0f 50%, #111111 100%)" }}
         />
       )}
-      {/* Dee: #3B0A0A Deep Mahogany + silver damask */}
+      {/* Dee: warm charcoal (softer than mahogany) */}
       {roomKey === "dee" && (
         <>
           <div
             className="fixed inset-0 -z-[3] transition-[background] duration-1000"
-            style={{ background: "linear-gradient(135deg, #3B0A0A 0%, #2a0808 50%, #1a0505 100%)" }}
+            style={{ background: "linear-gradient(135deg, #1a1514 0%, #151212 50%, #121010 100%)" }}
           />
           <div
-            className="fixed inset-0 -z-[2] pointer-events-none opacity-[0.05]"
+            className="fixed inset-0 -z-[2] pointer-events-none opacity-[0.03]"
             style={{ backgroundImage: DAMASK_SVG }}
           />
         </>
       )}
-      {/* Josh: #1A1A1A Charcoal Slate + leather */}
+      {/* Josh: charcoal slate */}
       {roomKey === "josh" && (
         <>
           <div
             className="fixed inset-0 -z-[3] transition-[background] duration-1000"
-            style={{ background: "linear-gradient(180deg, #1A1A1A 0%, #252421 40%, #1A1A1A 100%)" }}
+            style={{ background: "linear-gradient(180deg, #141414 0%, #1a1a1a 40%, #141414 100%)" }}
           />
           <div
-            className="fixed inset-0 -z-[2] pointer-events-none"
+            className="fixed inset-0 -z-[2] pointer-events-none opacity-30"
             style={{ backgroundImage: LEATHER_SVG }}
           />
         </>
       )}
-      {/* Library: dark vellum tone */}
+      {/* Library: neutral dark */}
       {roomKey === "library" && (
         <div
           className="fixed inset-0 -z-[3] transition-[background] duration-1000"
-          style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #1a1510 30%, #151210 70%, #0A0A0A 100%)" }}
+          style={{ background: "linear-gradient(180deg, #111111 0%, #151413 30%, #131212 70%, #111111 100%)" }}
         />
       )}
       {/* Resources: Aged Vellum #F5F2E9 — LIGHT room */}
