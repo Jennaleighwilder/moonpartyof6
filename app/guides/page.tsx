@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const PAID_GUIDES = [
-  { title: "Spicy Text Playbook", price: "TBD", desc: "Dee's guide to flirty, reconnecting texts", intake: "/intakes/COUPLES_SPICY_INTAKE_COMPLETE.html" },
-  { title: "30-Day Relationship Reset", price: "TBD", desc: "A month of intentional connection" },
-  { title: "Mr. Moon: Modern Romance", price: "TBD", desc: "Josh's guide for men" },
-  { title: "Busy Dad's Guide to Fitness", price: "TBD", desc: "TBD" },
+  { title: "Spicy Text Playbook", price: "$", desc: "Flirty, reconnecting texts. Includes 7-day reset.", intake: "/intakes/COUPLES_SPICY_INTAKE_COMPLETE.html" },
+  { title: "30-Day Reset", price: "$", desc: "A month of intentional connection" },
+  { title: "Mr. Moon — Modern Romance", price: "$", desc: "Josh's guide for men (title TBD)", bundle: "Bundle option with Spicy Text Playbook" },
+  { title: "A Busy Dad's Guide to Fitness", price: "$", desc: "TBD" },
 ];
 
 export default function GuidesPage() {
@@ -20,8 +20,9 @@ export default function GuidesPage() {
             {PAID_GUIDES.map((g) => (
               <div key={g.title} className="p-8 bg-white border border-charcoal/10 rounded-lg">
                 <h2 className="font-display text-xl font-semibold mb-2">{g.title}</h2>
-                <p className="text-charcoal mb-4">{g.desc}</p>
-                <p className="text-deep-red font-semibold mb-4">{g.price}</p>
+                <p className="text-charcoal mb-2">{g.desc}</p>
+                {g.bundle && <p className="text-charcoal/70 text-sm mb-2">{g.bundle}</p>}
+                <p className="text-charcoal font-semibold mb-4">Price TBD</p>
                 <div className="flex flex-wrap gap-2">
                   <Link href="/contact?inquiry=guide" className="btn-primary text-sm py-2 px-4">Learn More</Link>
                   {g.intake && (

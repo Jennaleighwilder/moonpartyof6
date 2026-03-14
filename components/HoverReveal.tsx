@@ -64,14 +64,14 @@ function RevealCard({ title, text, image }: { title: string; text: string; image
         group relative overflow-hidden rounded-[24px] min-h-[280px]
         transition-all duration-500 ease-out
         ${hovered
-          ? "border border-warm-gold/50 shadow-[0_20px_50px_rgba(169,111,19,0.2)] -translate-y-2 scale-[1.02]"
+          ? "border border-charcoal/20 shadow-xl -translate-y-1 scale-[1.02]"
           : "border border-transparent opacity-95"
         }
       `}
     >
       <div className="absolute inset-0">
         <Image src={image} alt="" fill className={`object-cover object-top transition-all duration-700 ${hovered ? "scale-110" : "scale-100"}`} sizes="(max-width: 768px) 100vw, 33vw" />
-        <div className={`absolute inset-0 transition-all duration-500 ${hovered ? "bg-gradient-to-t from-deep-red/95 via-mahogany/60 to-warm-gold/30" : "bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"}`} />
+        <div className={`absolute inset-0 transition-all duration-500 ${hovered ? "bg-gradient-to-t from-charcoal/95 via-charcoal/50 to-transparent" : "bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"}`} />
       </div>
       <div className="relative z-10 p-8 flex flex-col justify-end min-h-[280px]">
         <h3 className="font-display text-2xl font-normal text-pearl-white mb-3 drop-shadow-lg">

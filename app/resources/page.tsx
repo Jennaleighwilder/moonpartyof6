@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const FREE_RESOURCES = [
+  { title: "12 Types of Intimacy", href: "/resources#intimacy", desc: "Emotional, physical, spiritual, and more" },
   { title: "Date Night at Home Guide", href: "/resources#at-home", desc: "Ideas for connection without leaving the house" },
-  { title: "Florida Date Night Guide", href: "/resources#florida", desc: "Orlando and beyond" },
-  { title: "12 Types of Intimacy", href: "/resources#intimacy", desc: "Beyond the physical" },
-  { title: "Communication Tools", href: "/resources#communication", desc: "Scripts and prompts" },
+  { title: "FL Date Night Guide", href: "/resources#florida", desc: "Orlando and beyond" },
+  { title: "7-Day Reset", href: "/resources#7day", desc: "Included in Spicy Text Playbook" },
 ];
 
 export default function ResourcesPage() {
@@ -18,7 +18,7 @@ export default function ResourcesPage() {
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {FREE_RESOURCES.map((r) => (
-              <Link key={r.href} href={r.href} className="block p-8 bg-white border border-charcoal/10 rounded-lg hover:border-deep-red/30 card-hover">
+              <Link key={r.href} href={r.href} className="block p-8 bg-white border border-charcoal/10 rounded-lg hover:border-charcoal/20 card-hover">
                 <h2 className="font-display text-xl font-semibold mb-2">{r.title}</h2>
                 <p className="text-charcoal">{r.desc}</p>
               </Link>
@@ -30,43 +30,42 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Date Nights & Travel — linked from Date Nights page */}
-      <section id="orlando" className="section-padding bg-white border-t border-charcoal/10 scroll-mt-24">
+      <section id="intimacy" className="section-padding bg-white border-t border-charcoal/10 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl font-semibold mb-4">Orlando Date Nights</h2>
+          <h2 className="font-display text-3xl font-semibold mb-4">12 Types of Intimacy</h2>
           <p className="text-charcoal mb-6">
-            Moon-approved spots in Orlando: Winter Park, Lake Eola, Mills 50, Thornton Park, and more. Curated for connection.
+            Emotional, physical, intellectual, spiritual, recreational, creative, financial, commitment, conflict, crisis, healing, celebration. Beyond the physical — the full spectrum of connection.
           </p>
-          <Link href="/date-nights" className="text-deep-red font-medium hover:underline">Try the Spark Generator →</Link>
+          <Link href="/resources#intimacy" className="text-charcoal font-medium hover:underline">Explore the 12 forms →</Link>
         </div>
       </section>
 
-      <section id="getaways" className="section-padding bg-pearl-white scroll-mt-24">
+      <section id="at-home" className="section-padding bg-pearl-white scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl font-semibold mb-4">Weekend Getaways</h2>
+          <h2 className="font-display text-3xl font-semibold mb-4">Date Night at Home Guide</h2>
           <p className="text-charcoal mb-6">
-            St. Augustine, Key West, Amelia Island, Savannah — romantic escapes within driving distance. Where are you being called?
-          </p>
-          <Link href="/date-nights" className="text-deep-red font-medium hover:underline">Take the travel quiz →</Link>
-        </div>
-      </section>
-
-      <section id="restaurants" className="section-padding bg-white border-t border-charcoal/10 scroll-mt-24">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl font-semibold mb-4">Romantic Restaurants</h2>
-          <p className="text-charcoal mb-6">
-            Intimate tables, great food, and the kind of ambiance that makes you lean in. Orlando and Florida favorites.
+            Ideas for connection without leaving the house. The spicy texts. The slow mornings. Coming soon.
           </p>
         </div>
       </section>
 
-      <section id="travel" className="section-padding bg-pearl-white scroll-mt-24">
+      <section id="florida" className="section-padding bg-white border-t border-charcoal/10 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-3xl font-semibold mb-4">Travel Guides</h2>
+          <h2 className="font-display text-3xl font-semibold mb-4">FL Date Night Guide</h2>
           <p className="text-charcoal mb-6">
-            Destination guides for couples. Where to stay, what to do, and how to make the most of your time together.
+            Orlando and beyond. Moon-approved spots: Winter Park, Lake Eola, St. Augustine, Key West. Curated for connection.
           </p>
-          <Link href="/date-nights" className="text-deep-red font-medium hover:underline">Where are you being called? →</Link>
+          <Link href="/date-nights" className="text-charcoal font-medium hover:underline">Try the Spark Generator →</Link>
+        </div>
+      </section>
+
+      <section id="7day" className="section-padding bg-pearl-white scroll-mt-24">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl font-semibold mb-4">7-Day Reset</h2>
+          <p className="text-charcoal mb-6">
+            Included in the Spicy Text Playbook. A week of intentional reconnection.
+          </p>
+          <Link href="/guides" className="text-charcoal font-medium hover:underline">View Spicy Text Playbook →</Link>
         </div>
       </section>
     </div>
