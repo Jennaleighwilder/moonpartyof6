@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const HERO_IMAGE = "/images/hero-couple.png";
+const HERO_BG = "/images/hero-maine.png";
+const HERO_CARD = "/images/gallery-beach.png";
 
 export function Hero() {
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden hero-paper-texture">
-      {/* Background: cinematic couple photo — object-position to avoid cutting off faces */}
+      {/* Background: Maine photo — snow, camel hat, pullover */}
       <div
         className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(120deg, rgba(17,17,17,0.88) 0%, rgba(46,46,46,0.6) 40%, rgba(129,31,31,0.5) 70%, rgba(122,12,24,0.3) 100%), url(${HERO_IMAGE})`,
+          backgroundImage: `linear-gradient(120deg, rgba(17,17,17,0.88) 0%, rgba(46,46,46,0.6) 40%, rgba(46,46,46,0.5) 70%, rgba(60,60,60,0.3) 100%), url(${HERO_BG})`,
           backgroundColor: "#111111",
           backgroundPosition: "center 30%",
         }}
@@ -68,10 +69,10 @@ export function Hero() {
               <div><span className="text-pearl-white font-semibold">15</span> <span className="text-sm">retreats</span></div>
             </motion.div>
           </div>
-          {/* Right: Dee + Josh photo */}
+          {/* Right: different photo — not same as background */}
           <div className="hidden lg:flex items-center justify-center animate-float">
             <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-pearl-white/20 shadow-2xl">
-              <img src="/images/hero-couple.png" alt="Dee and Josh Moon" className="w-full h-full object-cover" style={{ objectPosition: "center 25%" }} />
+              <img src={HERO_CARD} alt="Dee and Josh Moon" className="w-full h-full object-cover object-top" />
             </div>
           </div>
         </div>
