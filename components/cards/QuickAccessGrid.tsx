@@ -21,12 +21,12 @@ export function QuickAccessGrid() {
                 href={card.href}
                 className="block p-8 rounded-sm border border-champagne-gold/10 bg-charcoal/40 backdrop-blur-sm hover:border-champagne-gold/30 hover:bg-charcoal/60 hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-all duration-300 group tap-scale"
               >
-                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-sleek-silver/60">{card.label}</span>
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-sleek-silver/90">{card.label}</span>
                 <h3 className="font-display text-2xl font-normal text-pearl-white mt-3 group-hover:text-champagne-gold transition-colors duration-300 leading-[1.4]">
                   {card.title}
                 </h3>
                 <p className="font-slab text-sleek-silver/80 text-sm mt-2 leading-relaxed">{card.desc}</p>
-                <span className="inline-block mt-4 font-mono text-[9px] uppercase tracking-[0.2em] text-champagne-gold/80">
+                <span className="inline-block mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-champagne-gold/90">
                   {card.badge}
                 </span>
               </Link>

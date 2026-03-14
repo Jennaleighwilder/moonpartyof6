@@ -88,7 +88,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
             >
               {step === 0 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 1 of 4</p>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>Question 1 of 4</p>
                   <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     What is the current mood of your union?
                   </h3>
@@ -116,7 +116,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 1 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 2 of 4</p>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>Question 2 of 4</p>
                   <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     Which element draws you tonight?
                   </h3>
@@ -145,7 +145,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 2 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 3 of 4</p>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>Question 3 of 4</p>
                   <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     How much time do you have?
                   </h3>
@@ -172,11 +172,11 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 3 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 4 of 4</p>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>Question 4 of 4</p>
                   <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     Where are you?
                   </h3>
-                  <p className={`text-sm mb-4 ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>
+                  <p className={`text-sm mb-4 ${isEditorial ? "text-pearl-white/80" : "text-sleek-silver/95"}`}>
                     Get area-specific ideas (Orlando, Florida) or keep it universal.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
@@ -287,20 +287,20 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                 <div className="mb-8">
                   <InvitationCard idea={result!} />
                 </div>
-                <p className={isEditorial ? "text-pearl-white/85 mb-6" : "text-charcoal mb-6"}>{result!.desc}</p>
+                <p className={isEditorial ? "text-pearl-white/85 mb-6" : "text-sleek-silver/95 mb-6"}>{result!.desc}</p>
 
                 {/* Blueprint: Map + Transit when location-specific */}
                 {result!.place && (
                   <div className="mb-8">
-                    <p className={`font-mono text-[9px] uppercase tracking-[0.3em] mb-3 ${isEditorial ? "text-pearl-white/50" : "text-charcoal/60"}`}>Your Night · Map</p>
+                    <p className={`font-mono text-[11px] uppercase tracking-[0.2em] mb-3 ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>Your Night · Map</p>
                     <BlueprintMap place={result!.place} isEditorial={isEditorial} />
                   </div>
                 )}
 
                 {/* Lover's Note — Vibe Check (handwritten feel) */}
                 <div className={`rounded-xl p-6 mb-6 ${isEditorial ? "bg-pearl-white/5 border border-pearl-white/20" : "bg-pearl-white/80 border border-charcoal/10"}`}>
-                  <p className={`font-mono text-[9px] uppercase tracking-[0.2em] mb-3 ${isEditorial ? "text-pearl-white/50" : "text-charcoal/60"}`}>Lover&apos;s Note · Vibe Check</p>
-                  <p className={`mb-4 font-display text-lg italic leading-relaxed ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>&ldquo;{result!.text}&rdquo;</p>
+                  <p className={`font-mono text-[11px] uppercase tracking-[0.2em] mb-3 ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>Lover&apos;s Note · Vibe Check</p>
+                  <p className={`mb-4 font-display text-lg italic leading-relaxed ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>&ldquo;{result!.text}&rdquo;</p>
                   <DateNightShareBar url={shareUrl} title={result!.title} text={result!.text} />
                 </div>
 
@@ -316,7 +316,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                 </div>
 
                 <div className={`border-t pt-6 mb-6 ${isEditorial ? "border-pearl-white/20" : "border-charcoal/10"}`}>
-                  <p className={`text-sm font-medium mb-3 ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>Send the full date card to your love</p>
+                  <p className={`text-sm font-medium mb-3 ${isEditorial ? "text-pearl-white/80" : "text-sleek-silver/95"}`}>Send the full date card to your love</p>
                   <Link
                     href={shareUrl}
                     target="_blank"
@@ -325,11 +325,11 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                   >
                     Open shareable link →
                   </Link>
-                  <p className={`text-xs mt-2 ${isEditorial ? "text-pearl-white/50" : "text-charcoal"}`}>They&apos;ll see the full date idea, text, and tips in a beautiful card.</p>
+                  <p className={`text-xs mt-2 ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>They&apos;ll see the full date idea, text, and tips in a beautiful card.</p>
                 </div>
 
                 <div className={`border-t pt-6 mb-6 ${isEditorial ? "border-pearl-white/20" : "border-charcoal/10"}`}>
-                  <p className={`text-sm font-medium mb-3 ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>Want more ideas?</p>
+                  <p className={`text-sm font-medium mb-3 ${isEditorial ? "text-pearl-white/80" : "text-sleek-silver/95"}`}>Want more ideas?</p>
                   <div className="flex flex-wrap gap-3">
                     <Link href="/resources" className={isEditorial ? "px-4 py-2 border border-pearl-white/40 text-pearl-white rounded-xl text-sm hover:bg-pearl-white/10" : "btn-secondary text-sm py-2 px-4"}>At-Home Guide</Link>
                     <Link href="/guides" className={isEditorial ? "px-4 py-2 border border-pearl-white/40 text-pearl-white rounded-xl text-sm hover:bg-pearl-white/10" : "btn-secondary text-sm py-2 px-4"}>30-Day Reset</Link>
@@ -349,7 +349,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                   className={`w-full py-3 rounded-xl ${
                     isEditorial
                       ? "border border-pearl-white/30 text-pearl-white hover:bg-pearl-white/10"
-                      : "border border-charcoal/30 hover:bg-charcoal/5 text-charcoal"
+                      : "border border-champagne-gold/30 hover:bg-champagne-gold/10 text-sleek-silver"
                   }`}
                 >
                   Generate Another Spark

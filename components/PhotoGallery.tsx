@@ -19,7 +19,7 @@ const GALLERY_IMAGES = [
 export function PhotoGallery() {
   return (
     <section className="section-padding relative overflow-hidden">
-      <p className="text-center font-mono text-[9px] uppercase tracking-[0.3em] text-sleek-silver/70 mb-12">
+      <p className="text-center font-mono text-[11px] uppercase tracking-[0.25em] text-sleek-silver/95 mb-12">
         real life · real love
       </p>
       {/* Anti-grid collage — overlapping, clip-path, negative margins */}

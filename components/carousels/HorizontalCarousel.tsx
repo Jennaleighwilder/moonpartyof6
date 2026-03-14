@@ -35,7 +35,7 @@ export function HorizontalCarousel() {
             <div className="absolute inset-0 bg-gradient-to-br from-obsidian/90 to-mahogany/70" />
             <div className="absolute inset-0 flex flex-col justify-end p-6">
               <div className="relative z-10 transition-all duration-500 group-hover:translate-y-0 translate-y-2">
-                <h3 className="font-display text-xl font-light text-pearl-white transition-all duration-300 group-hover:font-bold">
+                <h3 className="font-display text-xl font-normal text-pearl-white transition-all duration-300 group-hover:font-bold">
                   {spot.name}
                 </h3>
                 <p className="text-sm text-pearl-white/70 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

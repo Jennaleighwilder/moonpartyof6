@@ -24,11 +24,11 @@ const config: Config = {
         "warm-taupe": "#C2AE9A",
       },
       fontFamily: {
-        display: ["var(--font-bodoni)", "serif"],
-        serif: ["var(--font-bodoni)", "serif"],
-        slab: ["var(--font-roboto-slab)", "serif"],
-        sans: ["var(--font-montserrat)", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "monospace"],
+        display: ["var(--font-bodoni)", "Georgia", "Times New Roman", "serif"],
+        serif: ["var(--font-bodoni)", "Georgia", "Times New Roman", "serif"],
+        slab: ["var(--font-roboto-slab)", "Georgia", "serif"],
+        sans: ["var(--font-montserrat)", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
       },
       spacing: {
         section: "3rem",

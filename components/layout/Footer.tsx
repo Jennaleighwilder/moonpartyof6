@@ -15,7 +15,7 @@ function DisplayOptions() {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="font-mono text-[9px] uppercase tracking-[0.3em] text-sleek-silver hover:text-warm-gold transition-colors tap-scale"
+        className="font-mono text-[11px] uppercase tracking-[0.25em] text-sleek-silver/90 hover:text-champagne-gold transition-colors tap-scale"
         aria-expanded={open}
       >
         Display
@@ -24,7 +24,7 @@ function DisplayOptions() {
         <>
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
           <div className="absolute bottom-full right-0 mb-2 z-50 w-64 p-5 backdrop-blur-[20px] rounded-sm border border-white/10 bg-obsidian/60 shadow-[0_20px_60px_-12px_rgba(0,0,0,0.5)]">
-            <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-pearl-white/50 mb-4">Launchpad</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-pearl-white/70 mb-4">Launchpad</p>
             <div className="flex flex-col gap-1">
               <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(243,229,171,0.15)]">
                 <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs transition-all duration-300 ${adhd ? "border-champagne-gold bg-champagne-gold/20 text-champagne-gold shadow-[0_0_12px_rgba(243,229,171,0.3)]" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-champagne-gold/50 group-hover:shadow-[0_0_12px_rgba(243,229,171,0.2)]"}`}>⊙</span>

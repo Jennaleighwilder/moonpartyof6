@@ -36,10 +36,10 @@ export default function CompassQuizPage() {
       {/* Editorial header — compass identity */}
       <section className="border-b border-pearl-white/10">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-12">
-          <Link href="/quiz" className="font-mono text-[9px] uppercase tracking-[0.3em] text-pearl-white/50 hover:text-pearl-white transition-colors tap-scale">
+          <Link href="/quiz" className="font-mono text-[11px] uppercase tracking-[0.3em] text-pearl-white/50 hover:text-pearl-white transition-colors tap-scale">
             ← choose another path
           </Link>
-          <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-deep-red/80 mt-6">Relationship Compass</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-deep-red/80 mt-6">Relationship Compass</p>
           <h1 className="font-display text-3xl md:text-4xl font-normal mt-2">
             Focus · Time · Format
           </h1>
@@ -59,7 +59,7 @@ export default function CompassQuizPage() {
                 transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="relative bg-charcoal/80 backdrop-blur-sm border border-pearl-white/10 rounded-2xl p-8 md:p-10 shadow-[0_25px_80px_-12px_rgba(0,0,0,0.5)]"
               >
-                <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-pearl-white/50 mb-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-pearl-white/50 mb-6">
                   {step + 1} / {QUESTIONS.length}
                 </p>
                 <h2 className="font-display text-2xl md:text-3xl font-normal mb-10 leading-relaxed">

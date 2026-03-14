@@ -126,7 +126,19 @@ html.reduce-motion .ken-burns {
 
   /* Subhead — wide-tracked minimalist (Montserrat 0.1em per brief) */
   .subhead-editorial {
-    @apply font-sans text-xs uppercase tracking-[0.1em] font-light;
+    @apply font-sans text-xs uppercase tracking-[0.1em] font-normal;
+  }
+
+  /* Ensure text is always visible — prevent font loading issues */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Meta labels — 11px min for readability (was 9px) */
+  .text-meta {
+    font-size: 0.6875rem;
+    line-height: 1.4;
   }
 
   /* Hide scrollbar for carousel */

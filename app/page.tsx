@@ -86,7 +86,7 @@ export default function HomePage() {
       <ScrollReveal>
       <section className="section-padding border-t border-champagne-gold/10">
         <div className="max-w-xl mx-auto text-center">
-          <p className="text-[10px] uppercase tracking-[0.35em] text-sleek-silver/60 mb-4">follow</p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-sleek-silver/95 mb-4">follow</p>
           <SocialLinks variant="inline" />
           <a href={SITE.handleLink} target="_blank" rel="noopener noreferrer" className="text-champagne-gold hover:text-champagne-gold/80 font-bold text-xs mt-3 inline-block tracking-[0.25em] uppercase">
             {SITE.handle}

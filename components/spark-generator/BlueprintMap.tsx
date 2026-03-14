@@ -29,13 +29,13 @@ export function BlueprintMap({ place, isEditorial }: { place: Place; isEditorial
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className={`font-mono text-[9px] uppercase tracking-[0.3em] ${isEditorial ? "text-pearl-white/40" : "text-charcoal/50"}`}>
+          <div className={`font-mono text-[11px] uppercase tracking-[0.3em] ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>
             {place.lat.toFixed(4)}°N · {Math.abs(place.lng).toFixed(4)}°W
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
           <p className={`font-slab font-semibold ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>{place.name}</p>
-          <p className={`font-mono text-[9px] ${isEditorial ? "text-pearl-white/60" : "text-charcoal/70"}`}>{place.address}</p>
+          <p className={`font-mono text-[11px] ${isEditorial ? "text-pearl-white/80" : "text-sleek-silver/90"}`}>{place.address}</p>
         </div>
       </div>
       {/* Transit module */}
