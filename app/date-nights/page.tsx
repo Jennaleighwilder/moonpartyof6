@@ -28,11 +28,11 @@ export default function DateNightsPage() {
 
       <SparkGenerator variant="editorial" />
 
-      {/* Chapter 2: Where You're Called — travel pic background */}
+      {/* Chapter 2: Where You're Called — travel pic background (no golf cart) */}
       <section
         className="relative min-h-[55vh] flex flex-col justify-center text-pearl-white border-t-2 border-charcoal/10 overflow-hidden"
         style={{
-          backgroundImage: "url(/images/gallery-beach.png)",
+          backgroundImage: "url(/images/gallery-intimate.png)",
           backgroundSize: "cover",
           backgroundPosition: "center 40%",
         }}

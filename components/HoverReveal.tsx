@@ -27,7 +27,7 @@ const CARDS = [
   {
     title: "travel together",
     text: "beach days, pier sunsets — adventures that bring you closer.",
-    image: "/images/gallery-beach.png",
+    image: "/images/gallery-pier.png",
   },
   {
     title: "date night vibes",

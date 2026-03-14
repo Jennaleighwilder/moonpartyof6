@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 // Hero BG: Maine photo (snow, Dee in camel hat + black leggings, Josh in grey/white pullover)
 // Maine photo: snow, Dee in camel hat, Josh in grey pullover. Fallback: hero-couple.png
 const HERO_BG = "/images/hero-maine.png";
-const HERO_CARD = "/images/gallery-beach.png";
+const HERO_CARD = "/images/gallery-intimate.png";
 
 export function Hero() {
   const { scrollY } = useScroll();

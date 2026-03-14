@@ -9,7 +9,7 @@
 | File | Where it appears |
 |------|------------------|
 | `hero-maine.png` or `hero-couple.png` | Hero background (homepage) |
-| `gallery-beach.png` | Hero floating card (different from background) |
+| `gallery-intimate.png` | Hero floating card (NO golf cart — use couple shot) |
 | `dee.png` | Mrs. Moon page + Meet the Moons |
 | `josh.png` | Mr. Moon page + Meet the Moons |
 
