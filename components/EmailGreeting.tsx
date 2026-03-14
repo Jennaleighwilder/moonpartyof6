@@ -37,39 +37,39 @@ export function EmailGreeting() {
   };
 
   return (
-    <section id="email" className="relative overflow-hidden scroll-mt-20 bg-cream">
+    <section id="email" className="relative overflow-hidden scroll-mt-20">
       <div className="relative z-10 section-padding">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-warm-gold mb-6 font-bold">
+            <p className="text-xs uppercase tracking-[0.4em] text-champagne-gold/90 mb-6 font-bold">
               the moonparty awaits
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-normal text-charcoal mb-4 leading-[1.4]">
+            <h2 className="font-display text-4xl md:text-5xl font-normal text-pearl-white mb-4 leading-[1.4]">
               Join the Inner Circle
             </h2>
-            <p className="text-charcoal/80 text-sm md:text-base mb-10 max-w-md mx-auto leading-relaxed">
+            <p className="text-sleek-silver/90 text-sm md:text-base mb-10 max-w-md mx-auto leading-relaxed">
               One email. Monthly wisdom. No spam — just the good stuff.
             </p>
 
             {status === "error" ? (
-              <div className="py-8 px-6 bg-white/90 border border-charcoal/20 rounded-xl">
-                <p className="text-charcoal">Something went wrong. Try again or email us at {CONTACT.email}.</p>
+              <div className="py-8 px-6 bg-charcoal/50 backdrop-blur-sm border border-champagne-gold/20 rounded-xl">
+                <p className="text-pearl-white">Something went wrong. Try again or email us at {CONTACT.email}.</p>
               </div>
             ) : status === "success" ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="py-12 px-8 bg-white/90 border border-warm-gold/30 rounded-xl"
+                className="py-12 px-8 bg-charcoal/50 backdrop-blur-sm border border-champagne-gold/30 rounded-xl"
               >
-                <p className="font-display text-xl text-charcoal">
+                <p className="font-display text-xl text-pearl-white">
                   You&apos;re in. Check your inbox for a welcome from us.
                 </p>
-                <p className="text-charcoal/70 text-sm mt-2">
+                <p className="text-sleek-silver/80 text-sm mt-2">
                   We&apos;ll see you there.
                 </p>
               </motion.div>
@@ -83,7 +83,7 @@ export function EmailGreeting() {
                     placeholder="Your best email"
                     required
                     disabled={status === "submitting"}
-                    className="flex-1 px-6 py-4 bg-white border border-charcoal/20 rounded-lg text-charcoal placeholder:text-charcoal/50 focus:outline-none focus:ring-2 focus:ring-warm-gold/30 focus:border-warm-gold transition-all disabled:opacity-60"
+                    className="flex-1 px-6 py-4 bg-obsidian/80 border border-champagne-gold/20 rounded-lg text-pearl-white placeholder:text-sleek-silver/50 focus:outline-none focus:ring-2 focus:ring-champagne-gold/30 focus:border-champagne-gold transition-all disabled:opacity-60"
                   />
                   <button
                     type="submit"
@@ -93,13 +93,13 @@ export function EmailGreeting() {
                     {status === "submitting" ? "Joining…" : "Join"}
                   </button>
                 </div>
-                <p className="text-xs text-charcoal/60">
+                <p className="text-xs text-sleek-silver/60">
                   Unsubscribe anytime. We respect your inbox.
                 </p>
               </form>
             )}
 
-            <p className="mt-8 text-sm text-charcoal/60">
+            <p className="mt-8 text-sm text-sleek-silver/60">
               {SITE.name} · {SITE.tagline}
             </p>
           </motion.div>

@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 24, filter: "blur(10px)" },
+  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
   viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+  transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
 };
 
 export function ScrollReveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {

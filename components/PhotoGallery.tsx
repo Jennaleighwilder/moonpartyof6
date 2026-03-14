@@ -18,21 +18,22 @@ const GALLERY_IMAGES = [
 
 export function PhotoGallery() {
   return (
-    <section className="section-padding bg-vellum">
-      <div className="max-w-[1400px] mx-auto">
-        <p className="text-center font-slab text-sm font-semibold uppercase tracking-[0.3em] text-charcoal/70 mb-8">
-          real life · real love
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+    <section className="section-padding relative overflow-hidden">
+      <p className="text-center font-mono text-[9px] uppercase tracking-[0.3em] text-sleek-silver/70 mb-12">
+        real life · real love
+      </p>
+      {/* Anti-grid collage — overlapping, clip-path, negative margins */}
+      <div className="relative max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 -ml-4 md:-ml-8">
           {GALLERY_IMAGES.map((item, i) => (
             <motion.div
               key={item.src}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
-              style={{ rotate: item.rotate }}
-              className="relative aspect-[4/5] overflow-hidden cut-out tap-scale rounded-sm"
+              transition={{ delay: i * 0.06, duration: 0.7 }}
+              style={{ rotate: item.rotate, zIndex: i % 3 === 0 ? 2 : 1, clipPath: i % 3 === 0 ? "polygon(1% 0%, 99% 1%, 100% 99%, 0% 98%)" : undefined }}
+              className={`relative aspect-[4/5] overflow-hidden cut-out tap-scale rounded-sm ${i % 4 === 0 ? "md:-mt-8 md:ml-4" : ""} ${i === 2 ? "md:mt-4" : ""}`}
             >
               <Image
                 src={item.src}

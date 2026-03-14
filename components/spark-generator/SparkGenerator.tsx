@@ -58,15 +58,15 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
   const shareUrl = result ? buildShareUrl({ vibe, spice, time, area: area || undefined }) : "";
 
   return (
-    <section className={`section-padding ${isEditorial ? "bg-deep-red/95" : "bg-vellum"}`}>
+    <section className={`section-padding relative ${isEditorial ? "bg-deep-red/95" : ""}`}>
       <div className={`max-w-2xl mx-auto ${isEditorial ? "" : ""}`}>
         {!isEditorial && (
           <>
-            <p className="text-xs uppercase tracking-[0.4em] text-warm-gold mb-4 font-bold text-center">date night generator</p>
-            <h2 className="font-display text-3xl md:text-4xl font-normal text-charcoal text-center mb-4">
+            <p className="text-xs uppercase tracking-[0.4em] text-champagne-gold/90 mb-4 font-bold text-center">date night generator</p>
+            <h2 className="font-display text-3xl md:text-4xl font-normal text-pearl-white text-center mb-4">
               Need a spark tonight?
             </h2>
-            <p className="text-charcoal/80 text-center mb-12">
+            <p className="text-sleek-silver/90 text-center mb-12">
               Four questions. One personalized date idea. Area-specific when you want it. Send it to your love.
             </p>
           </>
@@ -83,13 +83,13 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               className={`p-8 md:p-10 rounded-2xl ${
                 isEditorial
                   ? "bg-pearl-white/5 border border-pearl-white/20 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
-                  : "bg-white/80 backdrop-blur-sm border border-warm-gold/20 shadow-[0_15px_40px_rgba(169,111,19,0.08)]"
+                  : "bg-charcoal/50 backdrop-blur-md border border-champagne-gold/20 shadow-[0_15px_40px_rgba(0,0,0,0.3)]"
               }`}
             >
               {step === 0 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 1 of 4</p>
-                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 1 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     What is the current mood of your union?
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
@@ -103,12 +103,12 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                               ? "border-pearl-white bg-pearl-white/20 text-pearl-white"
                               : "border-pearl-white/30 hover:border-pearl-white/50 hover:bg-pearl-white/10 text-pearl-white/90"
                             : mood?.id === m.id
-                              ? "border-warm-gold bg-warm-gold/10 text-warm-gold"
-                              : "border-charcoal/15 hover:border-warm-gold/40"
+                              ? "border-champagne-gold bg-champagne-gold/20 text-champagne-gold"
+                              : "border-champagne-gold/20 hover:border-champagne-gold/50 hover:bg-champagne-gold/10"
                         }`}
                       >
                         <span className="font-medium block">{m.label}</span>
-                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>{m.desc}</span>
+                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>{m.desc}</span>
                       </button>
                     ))}
                   </div>
@@ -116,8 +116,8 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 1 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 2 of 4</p>
-                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 2 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     Which element draws you tonight?
                   </h3>
                   <div className="grid grid-cols-3 gap-4">
@@ -131,13 +131,13 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                               ? "border-pearl-white bg-pearl-white/20 text-pearl-white"
                               : "border-pearl-white/30 hover:border-pearl-white/50 hover:bg-pearl-white/10 text-pearl-white/90"
                             : element?.id === e.id
-                              ? "border-warm-gold bg-warm-gold/10 text-warm-gold"
-                              : "border-charcoal/15 hover:border-warm-gold/40"
+                              ? "border-champagne-gold bg-champagne-gold/20 text-champagne-gold"
+                              : "border-champagne-gold/20 hover:border-champagne-gold/50 hover:bg-champagne-gold/10"
                         }`}
                       >
                         <span className="font-display text-2xl block mb-1">{e.id === "fire" ? "🔥" : e.id === "water" ? "🌊" : "🌿"}</span>
                         <span className="font-medium block">{e.label}</span>
-                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>{e.desc}</span>
+                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>{e.desc}</span>
                       </button>
                     ))}
                   </div>
@@ -145,8 +145,8 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 2 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 3 of 4</p>
-                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 3 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     How much time do you have?
                   </h3>
                   <div className="flex flex-wrap gap-3">
@@ -172,8 +172,8 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               )}
               {step === 3 && (
                 <div>
-                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-charcoal/60"}`}>Question 4 of 4</p>
-                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>
+                  <p className={`subhead-editorial mb-4 ${isEditorial ? "text-pearl-white/60" : "text-sleek-silver/60"}`}>Question 4 of 4</p>
+                  <h3 className={`font-display text-xl md:text-2xl font-normal mb-6 ${isEditorial ? "text-pearl-white" : "text-pearl-white"}`}>
                     Where are you?
                   </h3>
                   <p className={`text-sm mb-4 ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>
@@ -190,12 +190,12 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                               ? "border-pearl-white bg-pearl-white/20 text-pearl-white"
                               : "border-pearl-white/30 hover:border-pearl-white/50 hover:bg-pearl-white/10 text-pearl-white/90"
                             : area === a.id
-                              ? "border-warm-gold bg-warm-gold/10 text-warm-gold"
-                              : "border-charcoal/15 hover:border-warm-gold/40"
+                              ? "border-champagne-gold bg-champagne-gold/20 text-champagne-gold"
+                              : "border-champagne-gold/20 hover:border-champagne-gold/50 hover:bg-champagne-gold/10"
                         }`}
                       >
                         <span className="font-medium block">{a.label}</span>
-                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-charcoal"}`}>{a.desc}</span>
+                        <span className={`text-sm ${isEditorial ? "text-pearl-white/70" : "text-sleek-silver/90"}`}>{a.desc}</span>
                       </button>
                     ))}
                   </div>
@@ -209,7 +209,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                     className={`px-6 py-3 rounded-xl ${
                       isEditorial
                         ? "border border-pearl-white/40 text-pearl-white hover:bg-pearl-white/10"
-                        : "border border-charcoal/30 text-charcoal hover:bg-charcoal/5"
+                        : "border border-champagne-gold/30 text-pearl-white hover:bg-champagne-gold/10"
                     }`}
                   >
                     Back
@@ -225,7 +225,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
                   className={`flex-1 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-xl font-medium ${
                     isEditorial
                       ? "bg-pearl-white text-deep-red hover:bg-pearl-white/95"
-                      : "bg-warm-gold text-pearl-white font-bold uppercase tracking-[0.35em] text-sm hover:bg-gold-light transition-all"
+                      : "bg-champagne-gold text-obsidian font-bold uppercase tracking-[0.35em] text-sm hover:bg-champagne-gold/90 transition-all"
                   }`}
                 >
                   {step < 3 ? "Next" : "Reveal Your Date"}

@@ -9,12 +9,14 @@ const config: Config = {
     extend: {
       colors: {
         obsidian: "#0A0A0A",
+        "champagne-gold": "#F3E5AB",
+        "deep-mahogany": "#4E0707",
         vellum: "#F8F5F2",
         "deep-red": "#7A0C18",
         "classic-black": "#111111",
         charcoal: "#252421",
         "sleek-silver": "#C0C0C0",
-        "pearl-white": "#F5F5F5",
+        "pearl-white": "#FDFCFB",
         mahogany: "#811F1F",
         cream: "#e7ded4",
         "warm-gold": "#A96F13",

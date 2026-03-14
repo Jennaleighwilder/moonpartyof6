@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FloatingStartHere } from "@/components/layout/FloatingStartHere";
 import { ChatButton } from "@/components/ChatButton";
 import { CustomCursor } from "@/components/CustomCursor";
+import { AmbientBackground } from "@/components/AmbientBackground";
 
 const bodoniModa = Bodoni_Moda({
   variable: "--font-bodoni",
@@ -51,7 +52,8 @@ export default function RootLayout({
       lang="en"
       className={`${bodoniModa.variable} ${montserrat.variable} ${robotoSlab.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans bg-vellum text-charcoal antialiased relative">
+      <body className="font-sans bg-obsidian text-pearl-white antialiased relative min-h-screen">
+        <AmbientBackground />
         <CustomCursor />
         <Navigation />
         <main>{children}</main>

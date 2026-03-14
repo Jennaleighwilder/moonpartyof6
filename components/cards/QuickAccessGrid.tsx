@@ -12,21 +12,21 @@ const CARDS = [
 
 export function QuickAccessGrid() {
   return (
-    <section className="section-padding bg-vellum">
+    <section className="section-padding relative -mt-8">
       <div className="max-w-[1400px] mx-auto">
         <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" delay={0.1}>
           {CARDS.map((card) => (
             <StaggerItem key={card.href}>
               <Link
                 href={card.href}
-                className="block p-8 rounded-sm border border-charcoal/5 bg-white hover:border-charcoal/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group tap-scale"
+                className="block p-8 rounded-sm border border-champagne-gold/10 bg-charcoal/40 backdrop-blur-sm hover:border-champagne-gold/30 hover:bg-charcoal/60 hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-all duration-300 group tap-scale"
               >
-                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-charcoal/50">{card.label}</span>
-                <h3 className="font-display text-2xl font-normal text-charcoal mt-3 group-hover:text-charcoal transition-colors duration-300 leading-[1.4]">
+                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-sleek-silver/60">{card.label}</span>
+                <h3 className="font-display text-2xl font-normal text-pearl-white mt-3 group-hover:text-champagne-gold transition-colors duration-300 leading-[1.4]">
                   {card.title}
                 </h3>
-                <p className="font-slab text-charcoal/70 text-sm mt-2 leading-relaxed">{card.desc}</p>
-                <span className="inline-block mt-4 font-mono text-[9px] uppercase tracking-[0.2em] text-charcoal/60">
+                <p className="font-slab text-sleek-silver/80 text-sm mt-2 leading-relaxed">{card.desc}</p>
+                <span className="inline-block mt-4 font-mono text-[9px] uppercase tracking-[0.2em] text-champagne-gold/80">
                   {card.badge}
                 </span>
               </Link>

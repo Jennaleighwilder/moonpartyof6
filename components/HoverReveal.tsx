@@ -38,9 +38,9 @@ const CARDS = [
 
 export function HoverReveal() {
   return (
-    <section className="section-padding bg-cream">
+    <section className="section-padding relative">
       <div className="max-w-[1200px] mx-auto">
-        <p className="text-center text-xs uppercase tracking-[0.4em] text-warm-gold mb-6 font-bold">
+        <p className="text-center text-xs uppercase tracking-[0.4em] text-champagne-gold/90 mb-6 font-bold">
           lean in closer
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

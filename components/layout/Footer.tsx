@@ -23,21 +23,21 @@ function DisplayOptions() {
       {open && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
-          <div className="absolute bottom-full right-0 mb-2 z-50 w-64 p-5 bg-charcoal/95 backdrop-blur-md rounded-sm border border-pearl-white/10 shadow-[0_20px_60px_-12px_rgba(0,0,0,0.5)]">
+          <div className="absolute bottom-full right-0 mb-2 z-50 w-64 p-5 backdrop-blur-[20px] rounded-sm border border-white/10 bg-obsidian/60 shadow-[0_20px_60px_-12px_rgba(0,0,0,0.5)]">
             <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-pearl-white/50 mb-4">Launchpad</p>
             <div className="flex flex-col gap-1">
-              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-colors group">
-                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs ${adhd ? "border-warm-gold bg-warm-gold/20 text-warm-gold" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-warm-gold/50"}`}>⊙</span>
+              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(243,229,171,0.15)]">
+                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs transition-all duration-300 ${adhd ? "border-champagne-gold bg-champagne-gold/20 text-champagne-gold shadow-[0_0_12px_rgba(243,229,171,0.3)]" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-champagne-gold/50 group-hover:shadow-[0_0_12px_rgba(243,229,171,0.2)]"}`}>⊙</span>
                 <input type="checkbox" checked={adhd} onChange={(e) => { setAdhd(e.target.checked); document.documentElement.classList.toggle("adhd-focus", e.target.checked); }} className="sr-only" />
                 <span className="text-sm text-pearl-white/90">Calm focus</span>
               </label>
-              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-colors group">
-                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs ${contrast ? "border-warm-gold bg-warm-gold/20 text-warm-gold" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-warm-gold/50"}`}>◐</span>
+              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(243,229,171,0.15)]">
+                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs transition-all duration-300 ${contrast ? "border-champagne-gold bg-champagne-gold/20 text-champagne-gold shadow-[0_0_12px_rgba(243,229,171,0.3)]" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-champagne-gold/50 group-hover:shadow-[0_0_12px_rgba(243,229,171,0.2)]"}`}>◐</span>
                 <input type="checkbox" checked={contrast} onChange={(e) => { setContrast(e.target.checked); document.documentElement.classList.toggle("high-contrast", e.target.checked); }} className="sr-only" />
                 <span className="text-sm text-pearl-white/90">High contrast</span>
               </label>
-              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-colors group">
-                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs ${motion ? "border-warm-gold bg-warm-gold/20 text-warm-gold" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-warm-gold/50"}`}>◷</span>
+              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(243,229,171,0.15)]">
+                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs transition-all duration-300 ${motion ? "border-champagne-gold bg-champagne-gold/20 text-champagne-gold shadow-[0_0_12px_rgba(243,229,171,0.3)]" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-champagne-gold/50 group-hover:shadow-[0_0_12px_rgba(243,229,171,0.2)]"}`}>◷</span>
                 <input type="checkbox" checked={motion} onChange={(e) => { setMotion(e.target.checked); document.documentElement.classList.toggle("reduce-motion", e.target.checked); }} className="sr-only" />
                 <span className="text-sm text-pearl-white/90">Reduce motion</span>
               </label>
