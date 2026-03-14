@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couples Intimacy Assessment | The Spicy Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Sorts+Mill+Goudy:ital,wght@0,400;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', -apple-system, sans-serif;
+            background: #0d0a0b;
+            color: #1a1a1a;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 920px;
+            margin: 50px auto;
+            background: #faf8f5;
+            box-shadow: 0 35px 110px rgba(0,0,0,0.85);
+        }
+
+        /* Lace Pattern Overlay */
+        .lace-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(74, 30, 46, 0.03) 1.5px, transparent 1.5px),
+                radial-gradient(circle at 75% 75%, rgba(74, 30, 46, 0.03) 1.5px, transparent 1.5px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Floral Detail */
+        .floral-accent {
+            position: relative;
+        }
+
+        .floral-accent::before {
+            content: '❋';
+            position: absolute;
+            font-size: 14px;
+            color: rgba(180, 144, 120, 0.3);
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header - Deep Burgundy with Lace */
+        .header {
+            background: linear-gradient(135deg, #2a1620 0%, #1a0e14 100%);
+            padding: 85px 90px 80px 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 30% 40%, rgba(180, 144, 120, 0.08) 2px, transparent 2px),
+                radial-gradient(circle at 70% 60%, rgba(180, 144, 120, 0.08) 2px, transparent 2px),
+                radial-gradient(circle at 50% 80%, rgba(180, 144, 120, 0.05) 1.5px, transparent 1.5px);
+            background-size: 45px 45px, 45px 45px, 30px 30px;
+            background-position: 0 0, 22px 22px, 15px 15px;
+            opacity: 0.6;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent,
+                rgba(180, 144, 120, 0.4) 20%,
+                rgba(180, 144, 120, 0.6) 50%,
+                rgba(180, 144, 120, 0.4) 80%,
+                transparent
+            );
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .tag {
+            font-family: 'Raleway', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #b49078;
+            margin-bottom: 28px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 72px;
+            font-weight: 300;
+            color: #faf8f5;
+            line-height: 1.05;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            font-family: 'Sorts Mill Goudy', Georgia, serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: #d4c4b8;
+            line-height: 1.65;
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Warning Box */
+        .warning {
+            background: linear-gradient(135deg, #4a1e2e 0%, #3a1822 100%);
+            color: #f5e8e0;
+            padding: 40px 50px;
+            margin: 60px 90px 0 90px;
+            position: relative;
+            box-shadow: 
+                0 5px 0 #2a1018,
+                0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .warning::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.04) 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+
+        .warning-content {
+            position: relative;
+            z-index: 1;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .warning strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 95px 90px 115px 90px;
+        }
+
+        /* Instructions Panel - Champagne */
+        .instructions {
+            background: linear-gradient(135deg, #5a4438 0%, #4a3528 100%);
+            color: #faf8f5;
+            padding: 52px 62px;
+            margin-bottom: 95px;
+            box-shadow: 
+                0 6px 0 #2a1a14,
+                0 12px 38px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .instructions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(180, 144, 120, 0.06) 1.5px, transparent 1.5px),
+                radial-gradient(circle at 75% 75%, rgba(180, 144, 120, 0.06) 1.5px, transparent 1.5px);
+            background-size: 35px 35px;
+            background-position: 0 0, 17px 17px;
+        }
+
+        .instructions-content {
+            position: relative;
+            z-index: 1;
+            font-size: 17px;
+            line-height: 1.75;
+            font-weight: 400;
+        }
+
+        .instructions strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Section */
+        .section {
+            margin: 105px 0;
+        }
+
+        /* Section Header - Deep Plum with Florals */
+        .section-header {
+            background: linear-gradient(135deg, #2a1620 0%, #1e1018 100%);
+            padding: 50px 62px;
+            margin-bottom: 75px;
+            box-shadow: 
+                0 5px 0 #14080c,
+                0 10px 38px rgba(0,0,0,0.65);
+            position: relative;
+            text-align: center;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 30% 30%, rgba(180, 144, 120, 0.06) 2px, transparent 2px),
+                radial-gradient(circle at 70% 70%, rgba(180, 144, 120, 0.06) 2px, transparent 2px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+        }
+
+        .section-header::after {
+            content: '❋';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            color: rgba(180, 144, 120, 0.5);
+        }
+
+        .section-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 52px;
+            font-weight: 400;
+            color: #faf8f5;
+            margin-bottom: 18px;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .section-intro {
+            font-family: 'Sorts Mill Goudy', Georgia, serif;
+            font-size: 17px;
+            font-style: italic;
+            color: #d4c4b8;
+            line-height: 1.65;
+        }
+
+        /* Question Card - Cream with Lace Border */
+        .question {
+            background: #ffffff;
+            padding: 46px 52px;
+            margin: 42px 0;
+            box-shadow: 
+                0 4px 0 #f0ebe5,
+                0 8px 24px rgba(0,0,0,0.18);
+            border-left: 4px solid #b49078;
+            position: relative;
+        }
+
+        .question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 10px 10px, rgba(74, 30, 46, 0.02) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+
+        .question-label {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 14px;
+            display: block;
+            line-height: 1.35;
+            position: relative;
+            z-index: 1;
+        }
+
+        .question-helper {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            color: #6b6562;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 24px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 21px 28px;
+            background: #fafaf8;
+            border: 2px solid #e0d8cc;
+            color: #1a1a1a;
+            font-size: 16px;
+            font-family: 'Raleway', sans-serif;
+            transition: all 0.3s ease;
+            margin-top: 12px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4a1e2e;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(74, 30, 46, 0.08);
+        }
+
+        textarea {
+            min-height: 175px;
+            resize: vertical;
+            line-height: 1.7;
+        }
+
+        textarea.deep {
+            min-height: 270px;
+        }
+
+        /* Checkbox Group */
+        .checkbox-group {
+            margin: 32px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: flex-start;
+            margin: 0;
+            padding: 23px 28px;
+            background: #fafaf8;
+            border-left: 3px solid #f0ebe5;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f5f3f0;
+        }
+
+        .checkbox-option:hover {
+            background: #ffffff;
+            border-left-color: #b49078;
+        }
+
+        .checkbox-option:last-child {
+            border-bottom: none;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 20px;
+            margin-top: 2px;
+            accent-color: #4a1e2e;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-option label {
+            cursor: pointer;
+            flex: 1;
+            line-height: 1.6;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* Major Question - Blush Accent */
+        .major-question {
+            background: linear-gradient(135deg, #4a3038 0%, #3a2428 100%);
+            padding: 58px 65px;
+            margin: 65px 0;
+            box-shadow: 
+                0 6px 0 #1a0c10,
+                0 12px 42px rgba(0,0,0,0.65);
+            position: relative;
+        }
+
+        .major-question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(212, 196, 184, 0.05) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(212, 196, 184, 0.05) 2px, transparent 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        .major-question::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(180, 144, 120, 0.3) 0%,
+                rgba(180, 144, 120, 0.6) 50%,
+                rgba(180, 144, 120, 0.3) 100%
+            );
+        }
+
+        .major-question .question-label {
+            color: #faf8f5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .major-question .question-helper {
+            color: #d4c4b8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .major-question textarea {
+            background: rgba(250, 248, 245, 0.97);
+            border-color: #b49078;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Divider with Floral */
+        .divider {
+            text-align: center;
+            margin: 115px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(180, 144, 120, 0.3) 20%,
+                rgba(180, 144, 120, 0.5) 50%, 
+                rgba(180, 144, 120, 0.3) 80%,
+                transparent
+            );
+            margin-bottom: 30px;
+        }
+
+        .divider-symbol {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #b49078;
+            letter-spacing: 18px;
+            margin-left: 18px;
+        }
+
+        /* Submit Section */
+        .submit-container {
+            text-align: center;
+            margin: 120px 0 0 0;
+            padding-top: 95px;
+            position: relative;
+        }
+
+        .submit-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(180, 144, 120, 0.3) 25%,
+                rgba(180, 144, 120, 0.5) 50%, 
+                rgba(180, 144, 120, 0.3) 75%,
+                transparent
+            );
+        }
+
+        .submit-container::after {
+            content: '❋';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            color: rgba(180, 144, 120, 0.5);
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #4a1e2e 0%, #3a1822 100%);
+            color: #faf8f5;
+            font-family: 'Raleway', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            padding: 26px 85px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 
+                0 5px 0 #2a1018,
+                0 10px 38px rgba(0,0,0,0.6);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(180, 144, 120, 0.08) 1px, transparent 1px);
+            background-size: 22px 22px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 9px 0 #2a1018,
+                0 16px 48px rgba(0,0,0,0.7);
+        }
+
+        .submit-button:active {
+            transform: translateY(1px);
+            box-shadow: 
+                0 3px 0 #2a1018,
+                0 6px 28px rgba(0,0,0,0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2a1620 0%, #1a0e14 100%);
+            padding: 65px 90px;
+            text-align: center;
+            color: #9a8078;
+            font-size: 13px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: #b49078;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        /* Accent Borders */
+        .accent-blush {
+            border-left-color: #d4b4a8 !important;
+        }
+
+        .accent-gold {
+            border-left-color: #b49078 !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header,
+            .content,
+            .footer {
+                padding: 62px 48px;
+            }
+
+            .warning {
+                margin: 60px 48px 0 48px;
+            }
+
+            h1 {
+                font-size: 58px;
+            }
+
+            h2 {
+                font-size: 44px;
+            }
+
+            .major-question,
+            .instructions {
+                padding: 48px 45px;
+            }
+
+            .question {
+                padding: 40px 38px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-content">
+                <div class="tag">The Spicy Test</div>
+                <h1>Couples <em>Intimacy</em><br>Assessment</h1>
+                <p class="subtitle">A private exploration of desire, safety, and the space between connection and pressure</p>
+            </div>
+        </div>
+
+        <!-- WARNING -->
+        <div class="warning">
+            <div class="warning-content">
+                <strong>Critical: Both partners complete separately.</strong><br><br>
+                
+                Do not compare answers until both are finished. Do not discuss responses while filling this out. This is designed to capture honest experience, not performance.
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <!-- INSTRUCTIONS -->
+            <div class="instructions">
+                <div class="instructions-content">
+                    <strong>This is about what actually happens, not what should happen.</strong><br><br>
+                    
+                    Answer for yourself. Not what you think your partner wants to hear. Not what sounds better. What your body and mind actually experience.<br><br>
+                    
+                    Your partner will not see these answers unless you choose to share them.
+                </div>
+            </div>
+
+            <!-- PART 1: DAILY CONNECTION -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part One: Daily Connection</h2>
+                        <p class="section-intro">The fabric of ordinary moments</p>
+                    </div>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">Walk through a normal weekday with your partner</label>
+                    <span class="question-helper">The real version, not the ideal. From waking up to going to sleep.</span>
+                    <textarea class="deep" placeholder="Describe the actual day..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">When during the day do you feel closest to your partner?</label>
+                    <span class="question-helper">What moment, what context, what's happening</span>
+                    <textarea placeholder="The specific times you feel connected..."></textarea>
+                </div>
+
+                <div class="question accent-blush">
+                    <label class="question-label">When do you feel most alone while together?</label>
+                    <textarea placeholder="The moments of disconnect..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What small moments matter to you more than your partner realizes?</label>
+                    <textarea class="deep" placeholder="The things they don't know mean something..."></textarea>
+                </div>
+
+                <div class="question accent-gold">
+                    <label class="question-label">What small moments hurt you more than your partner realizes?</label>
+                    <textarea class="deep" placeholder="The things that sting in private..."></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">❋ ❋ ❋</span>
+            </div>
+
+            <!-- PART 2: CONFLICT -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Two: Conflict</h2>
+                        <p class="section-intro">What happens after the words stop</p>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">Who usually notices tension first?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="radio" name="notice_tension" id="tension1">
+                            <label for="tension1">I do</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="notice_tension" id="tension2">
+                            <label for="tension2">They do</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="notice_tension" id="tension3">
+                            <label for="tension3">We both do at the same time</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="notice_tension" id="tension4">
+                            <label for="tension4">Neither of us until it explodes</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question accent-blush">
+                    <label class="question-label">Who brings it up?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="radio" name="brings_up" id="brings1">
+                            <label for="brings1">Usually me</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="brings_up" id="brings2">
+                            <label for="brings2">Usually them</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="brings_up" id="brings3">
+                            <label for="brings3">Depends on the situation</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="brings_up" id="brings4">
+                            <label for="brings4">Neither - we avoid it</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What's their immediate reaction when you bring something up?</label>
+                    <textarea placeholder="Their first response..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What part of conflict affects you long after it ends?</label>
+                    <span class="question-helper">Not the content - the emotional residue</span>
+                    <textarea class="deep" placeholder="What stays with you..."></textarea>
+                </div>
+
+                <div class="question accent-gold">
+                    <label class="question-label">How long does it take you to recover emotionally from conflict?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="radio" name="recover_time" id="recover1">
+                            <label for="recover1">Minutes - it's over when it's over</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="recover_time" id="recover2">
+                            <label for="recover2">Hours - I need time to process</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="recover_time" id="recover3">
+                            <label for="recover3">Days - it stays in my body</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="recover_time" id="recover4">
+                            <label for="recover4">Weeks - it doesn't fully resolve</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="recover_time" id="recover5">
+                            <label for="recover5">They accumulate - each adds to the pile</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What do you need after conflict that you don't get?</label>
+                    <textarea class="deep" placeholder="The thing that would actually help you move forward..."></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">❋ ❋ ❋</span>
+            </div>
+
+            <!-- PART 3: TOUCH & AFFECTION -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Three: Touch & Affection</h2>
+                        <p class="section-intro">When closeness feels safe and when it doesn't</p>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">How does physical affection usually begin between you?</label>
+                    <textarea placeholder="Who initiates, how, when..."></textarea>
+                </div>
+
+                <div class="question accent-blush">
+                    <label class="question-label">What kind of touch feels comforting to you?</label>
+                    <textarea placeholder="The touch that settles you..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What kind of touch creates stress or pressure?</label>
+                    <textarea placeholder="The touch that makes you tense..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">Do you ever avoid affection because you're afraid it might lead somewhere?</label>
+                    <span class="question-helper">Be honest about the times you pull back preemptively</span>
+                    <textarea class="deep" placeholder="When and why..."></textarea>
+                </div>
+
+                <div class="question accent-gold">
+                    <label class="question-label">Have you ever given affection while emotionally guarded?</label>
+                    <span class="question-helper">Going through the motions while your heart is closed</span>
+                    <textarea placeholder="What that feels like..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">When does touch feel safest?</label>
+                    <span class="question-helper">What conditions have to be true</span>
+                    <textarea class="deep" placeholder="The circumstances that make it feel safe..."></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">❋ ❋ ❋</span>
+            </div>
+
+            <!-- PART 4: DESIRE -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Four: Desire</h2>
+                        <p class="section-intro">What opens it and what shuts it down</p>
+                    </div>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">When do you naturally feel open to intimacy?</label>
+                    <span class="question-helper">All the conditions that have to be true</span>
+                    <textarea class="deep" placeholder="Describe the circumstances..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What emotional state are you in on those days?</label>
+                    <textarea placeholder="How you're feeling when desire is accessible..."></textarea>
+                </div>
+
+                <div class="question accent-blush">
+                    <label class="question-label">What do you think when intimacy doesn't happen?</label>
+                    <span class="question-helper">The story you tell yourself</span>
+                    <textarea placeholder="Your internal narrative..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">Have you ever wanted closeness but pulled away anyway?</label>
+                    <span class="question-helper">The contradiction - wanting but not being able to access it</span>
+                    <textarea class="deep" placeholder="Describe that experience..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">Do you feel pressure even when your partner isn't intentionally pressuring you?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="radio" name="feel_pressure" id="pressure1">
+                            <label for="pressure1">No, I only feel pressure when they're actually pushing</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="feel_pressure" id="pressure2">
+                            <label for="pressure2">Sometimes - depends on the day</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="feel_pressure" id="pressure3">
+                            <label for="pressure3">Often - I feel the expectation without them saying anything</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="feel_pressure" id="pressure4">
+                            <label for="pressure4">Constantly - it's always there</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question accent-gold">
+                    <label class="question-label">What would make intimacy easier?</label>
+                    <span class="question-helper">Not hotter - easier. What would lower the barrier.</span>
+                    <textarea class="deep" placeholder="What would need to change..."></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">❋ ❋ ❋</span>
+            </div>
+
+            <!-- PART 5: HIDDEN EXPERIENCE -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Five: Hidden Experience</h2>
+                        <p class="section-intro">What you carry alone</p>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <div class="instructions-content">
+                        <strong>Final questions.</strong> The things that don't get said.
+                    </div>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What do you carry alone that your partner doesn't see?</label>
+                    <textarea class="deep" placeholder="The invisible weight..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What do you wish your partner understood without you having to explain?</label>
+                    <textarea class="deep" placeholder="What you need them to just know..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What are you afraid would happen if you were completely honest?</label>
+                    <textarea class="deep" placeholder="The fear that keeps you guarded..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">If your relationship felt truly safe, what would that feel like?</label>
+                    <span class="question-helper">Not perfect - safe</span>
+                    <textarea class="deep" placeholder="Describe what safety would feel like in your body..."></textarea>
+                </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="submit-container">
+                <button class="submit-button">Submit</button>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-logo">The Spicy Test</div>
+            <p>The Forgotten Code</p>
+        </div>
+    </div>
+</body>
+</html>

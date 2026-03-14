@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Experience Form | Josh's Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, sans-serif;
+            background: #0a0a0c;
+            color: #1a1a1c;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #f8f6f3;
+            box-shadow: 0 30px 100px rgba(0,0,0,0.8);
+        }
+
+        /* Plaid Pattern - Darker */
+        .plaid-pattern {
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    transparent, transparent 40px,
+                    rgba(15, 20, 30, 0.25) 40px, rgba(15, 20, 30, 0.25) 42px,
+                    transparent 42px, transparent 80px,
+                    rgba(15, 20, 30, 0.12) 80px, rgba(15, 20, 30, 0.12) 82px
+                ),
+                repeating-linear-gradient(0deg,
+                    transparent, transparent 40px,
+                    rgba(30, 50, 35, 0.25) 40px, rgba(30, 50, 35, 0.25) 42px,
+                    transparent 42px, transparent 80px,
+                    rgba(30, 50, 35, 0.12) 80px, rgba(30, 50, 35, 0.12) 82px
+                );
+        }
+
+        /* Header Panel - Deep Charcoal */
+        .header {
+            background: linear-gradient(135deg, #0f141e 0%, #080a0f 100%);
+            padding: 80px 85px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    transparent, transparent 48px,
+                    rgba(150, 120, 70, 0.08) 48px, rgba(150, 120, 70, 0.08) 50px
+                ),
+                repeating-linear-gradient(0deg,
+                    transparent, transparent 48px,
+                    rgba(192, 192, 192, 0.05) 48px, rgba(192, 192, 192, 0.05) 50px
+                );
+            opacity: 0.6;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: #967846;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 76px;
+            font-weight: 900;
+            color: #f8f6f3;
+            line-height: 1.0;
+            margin-bottom: 30px;
+            letter-spacing: -0.04em;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #c0c0c0;
+            line-height: 1.6;
+            max-width: 620px;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 90px 85px 110px 85px;
+        }
+
+        /* Instructions Panel - Deep Forest */
+        .instructions {
+            background: linear-gradient(135deg, #1e3223 0%, #152217 100%);
+            color: #f8f6f3;
+            padding: 50px 58px;
+            margin-bottom: 90px;
+            box-shadow: 
+                0 6px 0 #0d1510,
+                0 12px 35px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .instructions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.04) 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+
+        .instructions-content {
+            position: relative;
+            z-index: 1;
+            font-size: 17px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .instructions strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* Section */
+        .section {
+            margin: 100px 0;
+        }
+
+        /* Section Header - Near Black */
+        .section-header {
+            background: linear-gradient(135deg, #0f141e 0%, #0a0d12 100%);
+            padding: 48px 58px;
+            margin-bottom: 70px;
+            box-shadow: 
+                0 5px 0 #050608,
+                0 10px 35px rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    transparent, transparent 42px,
+                    rgba(150, 120, 70, 0.08) 42px, rgba(150, 120, 70, 0.08) 44px
+                ),
+                repeating-linear-gradient(0deg,
+                    transparent, transparent 42px,
+                    rgba(192, 192, 192, 0.06) 42px, rgba(192, 192, 192, 0.06) 44px
+                );
+        }
+
+        .section-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #f8f6f3;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .section-intro {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 17px;
+            font-style: italic;
+            color: #a8a8a8;
+            line-height: 1.6;
+        }
+
+        /* Question Card */
+        .question {
+            background: #ffffff;
+            padding: 44px 50px;
+            margin: 40px 0;
+            box-shadow: 
+                0 4px 0 #e5e2dd,
+                0 8px 20px rgba(0,0,0,0.2);
+            border-left: 5px solid #967846;
+        }
+
+        .question-label {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1c;
+            margin-bottom: 12px;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .question-helper {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: #666664;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 20px 26px;
+            background: #fafaf8;
+            border: 2px solid #d0cbc0;
+            color: #1a1a1c;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.25s ease;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0f141e;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(15, 20, 30, 0.08);
+        }
+
+        textarea {
+            min-height: 170px;
+            resize: vertical;
+            line-height: 1.65;
+        }
+
+        textarea.deep {
+            min-height: 260px;
+        }
+
+        /* Checkbox Group */
+        .checkbox-group {
+            margin: 30px 0;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: flex-start;
+            margin: 0;
+            padding: 22px 26px;
+            background: #fafaf8;
+            border-left: 4px solid #e5e2dd;
+            transition: all 0.25s ease;
+            border-bottom: 1px solid #f0ede8;
+        }
+
+        .checkbox-option:hover {
+            background: #ffffff;
+            border-left-color: #967846;
+        }
+
+        .checkbox-option:last-child {
+            border-bottom: none;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 20px;
+            margin-top: 2px;
+            accent-color: #0f141e;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-option label {
+            cursor: pointer;
+            flex: 1;
+            line-height: 1.5;
+            color: #1a1a1c;
+            font-weight: 500;
+        }
+
+        /* Major Question - Deep Burgundy */
+        .major-question {
+            background: linear-gradient(135deg, #4a1e2e 0%, #351622 100%);
+            padding: 55px 62px;
+            margin: 60px 0;
+            box-shadow: 
+                0 6px 0 #20101a,
+                0 12px 40px rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .major-question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+            background-size: 26px 26px;
+        }
+
+        .major-question .question-label {
+            color: #f8f6f3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .major-question .question-helper {
+            color: #c8b8be;
+            position: relative;
+            z-index: 1;
+        }
+
+        .major-question textarea {
+            background: rgba(248, 246, 243, 0.97);
+            border-color: #967846;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Divider */
+        .divider {
+            text-align: center;
+            margin: 110px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                #967846 15%, 
+                #c0c0c0 50%, 
+                #967846 85%, 
+                transparent
+            );
+            margin-bottom: 28px;
+        }
+
+        .divider-symbol {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #0f141e;
+            letter-spacing: 20px;
+            margin-left: 20px;
+        }
+
+        /* Submit Section */
+        .submit-container {
+            text-align: center;
+            margin: 115px 0 0 0;
+            padding-top: 90px;
+            position: relative;
+        }
+
+        .submit-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                #1e3223 20%, 
+                #0f141e 50%, 
+                #1e3223 80%, 
+                transparent
+            );
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #0f141e 0%, #0a0d12 100%);
+            color: #f8f6f3;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            padding: 26px 80px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 
+                0 5px 0 #050608,
+                0 10px 35px rgba(0,0,0,0.6);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(192, 192, 192, 0.08) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 9px 0 #050608,
+                0 16px 45px rgba(0,0,0,0.7);
+        }
+
+        .submit-button:active {
+            transform: translateY(1px);
+            box-shadow: 
+                0 3px 0 #050608,
+                0 6px 25px rgba(0,0,0,0.5);
+        }
+
+        /* Footer - Deep Forest */
+        .footer {
+            background: linear-gradient(135deg, #1e3223 0%, #152217 100%);
+            padding: 60px 85px;
+            text-align: center;
+            color: #8a9a8e;
+            font-size: 13px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #967846;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Accent Borders */
+        .accent-silver {
+            border-left-color: #c0c0c0 !important;
+        }
+
+        .accent-red {
+            border-left-color: #c41e3a !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header,
+            .content,
+            .footer {
+                padding: 60px 45px;
+            }
+
+            h1 {
+                font-size: 56px;
+            }
+
+            h2 {
+                font-size: 42px;
+            }
+
+            .major-question,
+            .instructions {
+                padding: 45px 42px;
+            }
+
+            .question {
+                padding: 38px 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-content">
+                <div class="tag">Josh's Men's Work</div>
+                <h1>Men's Experience<br>Form</h1>
+                <p class="subtitle">Understanding what happens when good intentions meet confused partners</p>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <!-- INSTRUCTIONS -->
+            <div class="instructions">
+                <div class="instructions-content">
+                    <strong>This is not a test and there are no correct answers.</strong><br><br>
+                    
+                    I don't want advice. I don't want what you think men <em>should</em> do. I want <strong>memories</strong>. Real situations. The moments that stuck with you.<br><br>
+                    
+                    Answer with stories, not strategies. Confusion, not confidence. What actually happened, not what was supposed to happen.
+                </div>
+            </div>
+
+            <!-- PART 1: THE ARGUMENT -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part One: The Argument</h2>
+                        <p class="section-intro">Tell the story of the last argument that stuck with you.</p>
+                    </div>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">Start at the very beginning: What was happening right before it started?</label>
+                    <span class="question-helper">Where were you? What time of day? What were you each doing?</span>
+                    <textarea class="deep" placeholder="Paint the scene. I need context..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What did your partner say or do first?</label>
+                    <span class="question-helper">Exact words if you remember them. Tone. Body language.</span>
+                    <textarea placeholder="What was the trigger?"></textarea>
+                </div>
+
+                <div class="question accent-silver">
+                    <label class="question-label">What did you immediately think she meant?</label>
+                    <span class="question-helper">Your instant interpretation, before you responded</span>
+                    <textarea placeholder="In that split second, what did your brain tell you?"></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What emotion did you feel first (before anger)?</label>
+                    <textarea placeholder="Under the reaction, what was actually there?"></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What was your goal during the argument?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="goal1">
+                            <label for="goal1">Win / be right</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="goal2">
+                            <label for="goal2">Fix the problem</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="goal3">
+                            <label for="goal3">Make it stop</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="goal4">
+                            <label for="goal4">Be heard</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="goal5">
+                            <label for="goal5">Calm her down</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="goal6">
+                            <label for="goal6">Escape / leave</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="goal7">
+                            <label for="goal7">Defend myself</label>
+                        </div>
+                    </div>
+                    <span class="question-helper">Or something else:</span>
+                    <input type="text" placeholder="What were you trying to accomplish?">
+                </div>
+
+                <div class="question accent-red">
+                    <label class="question-label">What were you hoping would happen by the end?</label>
+                    <textarea placeholder="Your best-case scenario in that moment..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">At what exact moment did you realize it wasn't going well?</label>
+                    <textarea placeholder="What happened that made you think 'oh shit'?"></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What did you think she wanted from you in that moment?</label>
+                    <textarea placeholder="Your interpretation while it was happening..."></textarea>
+                </div>
+
+                <div class="question accent-silver">
+                    <label class="question-label">What do you think she actually wanted now, looking back?</label>
+                    <textarea placeholder="With hindsight..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">After it ended, what did you do in the next hour?</label>
+                    <textarea placeholder="Your actual behavior immediately after..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What did you NOT say that you wish you had said?</label>
+                    <textarea class="deep" placeholder="The thing you held back..."></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">◆ ◆ ◆</span>
+            </div>
+
+            <!-- PART 2: TRYING TO DO IT RIGHT -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Two: Trying to Do It Right</h2>
+                        <p class="section-intro">Describe a time you put real effort into the relationship.</p>
+                    </div>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What did you do?</label>
+                    <span class="question-helper">Be specific. What was the effort?</span>
+                    <textarea class="deep" placeholder="Tell the whole story..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">Why did you choose that specifically?</label>
+                    <span class="question-helper">What made you think THIS would work?</span>
+                    <textarea placeholder="Your reasoning at the time..."></textarea>
+                </div>
+
+                <div class="question accent-red">
+                    <label class="question-label">What reaction were you expecting from her?</label>
+                    <textarea placeholder="How did you think she would respond?"></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What reaction did you actually get?</label>
+                    <textarea placeholder="What really happened?"></textarea>
+                </div>
+
+                <div class="question accent-silver">
+                    <label class="question-label">What confused you about her response?</label>
+                    <textarea placeholder="The part that didn't make sense..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">Did you feel appreciated? Why or why not?</label>
+                    <textarea placeholder="Honest answer..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">Did it change how you acted afterward?</label>
+                    <span class="question-helper">Did you keep trying? Pull back? Do it differently?</span>
+                    <textarea placeholder="What shifted in you after this?"></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">◆ ◆ ◆</span>
+            </div>
+
+            <!-- PART 3: INITIATION & REJECTION -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Three: Initiation & Rejection</h2>
+                        <p class="section-intro">Think about the last time you initiated intimacy and it didn't go well.</p>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">How did you approach her?</label>
+                    <span class="question-helper">Physically? Verbally? Time of day? Context?</span>
+                    <textarea placeholder="Describe exactly what you did..."></textarea>
+                </div>
+
+                <div class="question accent-red">
+                    <label class="question-label">What signs did you interpret as interest beforehand?</label>
+                    <span class="question-helper">What made you think it was a good time to initiate?</span>
+                    <textarea placeholder="What signals did you read?"></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What was her response?</label>
+                    <span class="question-helper">Words, body language, energy</span>
+                    <textarea placeholder="What happened?"></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What did you feel immediately after?</label>
+                    <textarea placeholder="The first emotion..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What meaning did you assign to the rejection?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="radio" name="rejection_meaning" id="reject1">
+                            <label for="reject1">She's not attracted to me anymore</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="rejection_meaning" id="reject2">
+                            <label for="reject2">She's just tired</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="rejection_meaning" id="reject3">
+                            <label for="reject3">She's mad at me</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="rejection_meaning" id="reject4">
+                            <label for="reject4">Something's wrong I don't know about</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" name="rejection_meaning" id="reject5">
+                            <label for="reject5">I messed up / did something wrong</label>
+                        </div>
+                    </div>
+                    <span class="question-helper">Or something else:</span>
+                    <input type="text" placeholder="What story did you tell yourself?">
+                </div>
+
+                <div class="question accent-silver">
+                    <label class="question-label">What did you do in the following 24 hours?</label>
+                    <span class="question-helper">Your actual behavior the next day</span>
+                    <textarea placeholder="How did it affect you?"></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">Did you bring it up later or avoid it?</label>
+                    <span class="question-helper">And why?</span>
+                    <textarea placeholder="What made you choose that?"></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">◆ ◆ ◆</span>
+            </div>
+
+            <!-- PART 4: EMOTIONAL DISTANCE -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Four: Emotional Distance</h2>
+                        <p class="section-intro">Describe a period where you felt your partner pull away.</p>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What did you notice first?</label>
+                    <span class="question-helper">The first sign something had shifted</span>
+                    <textarea placeholder="What changed?"></textarea>
+                </div>
+
+                <div class="question accent-red">
+                    <label class="question-label">What did you think the cause was?</label>
+                    <textarea placeholder="Your theory at the time..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What actions did you take to fix it?</label>
+                    <span class="question-helper">Everything you tried</span>
+                    <textarea class="deep" placeholder="List them all..."></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">What worked?</label>
+                    <textarea placeholder="If anything..."></textarea>
+                </div>
+
+                <div class="question accent-silver">
+                    <label class="question-label">What made it worse?</label>
+                    <textarea placeholder="What backfired?"></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What do you wish she understood about what that felt like?</label>
+                    <textarea class="deep" placeholder="The part you couldn't say..."></textarea>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">◆ ◆ ◆</span>
+            </div>
+
+            <!-- PART 5: THE THINGS MEN DON'T SAY -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-content">
+                        <h2>Part Five: The Things Men Don't Say</h2>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <div class="instructions-content">
+                        <strong>Final questions.</strong> These matter more than anything else you've written.
+                    </div>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">When do you feel most respected by your partner?</label>
+                    <span class="question-helper">Not loved. Respected.</span>
+                    <textarea class="deep" placeholder="Be specific about moments or behaviors..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">When do you feel most rejected?</label>
+                    <span class="question-helper">Not criticized. Rejected.</span>
+                    <textarea class="deep" placeholder="What cuts deepest?"></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What makes you stop trying?</label>
+                    <textarea class="deep" placeholder="The point where you give up..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What makes you want to try again?</label>
+                    <textarea class="deep" placeholder="What brings you back?"></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">What do men often want emotionally but never ask for?</label>
+                    <span class="question-helper">Not sex. Emotionally.</span>
+                    <textarea class="deep" placeholder="The hidden need..."></textarea>
+                </div>
+
+                <div class="major-question">
+                    <label class="question-label">If you could explain one thing about how men interpret closeness, what would it be?</label>
+                    <span class="question-helper">The thing women don't seem to get</span>
+                    <textarea class="deep" placeholder="Your one truth..."></textarea>
+                </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="submit-container">
+                <button class="submit-button">Submit</button>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-logo">Josh's Men's Work</div>
+            <p>The Forgotten Code</p>
+        </div>
+    </div>
+</body>
+</html>
