@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Hero BG: use real photo from group — NOT a screenshot. gallery-5CC... is from user's photo set
-const HERO_BG = "/images/gallery-5CC28067-EE5A-453D-9F63-27E0695C0270.png";
-const HERO_CARD = "/images/gallery-intimate.png";
+// Hero: real photos only — NO screenshots. gallery-5CC/51D1 were webpage/style-guide screenshots
+const HERO_BG = "/images/gallery-intimate.png";
+const HERO_CARD = "/images/gallery-hallway.png";
 
 export function Hero() {
   const { scrollY } = useScroll();

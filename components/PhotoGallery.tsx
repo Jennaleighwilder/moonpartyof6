@@ -3,15 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-/** Real photos from user's group — no screenshots. */
+/** Real photos only — NO screenshots (gallery-5CC, 51D1 were webpage/style-guide). */
 const GALLERY_IMAGES = [
   { src: "/images/gallery-intimate.png", rotate: "-2deg" },
   { src: "/images/gallery-aprons.png", rotate: "1.5deg" },
   { src: "/images/gallery-hallway.png", rotate: "-1deg" },
   { src: "/images/gallery-casual.png", rotate: "2deg" },
   { src: "/images/gallery-pier.png", rotate: "1deg" },
-  { src: "/images/gallery-5CC28067-EE5A-453D-9F63-27E0695C0270.png", rotate: "-2deg" },
-  { src: "/images/gallery-51D1FA81-2F38-49D0-B84F-964D02F20F7E.png", rotate: "1.5deg" },
   { src: "/images/dee.png", rotate: "1.5deg" },
   { src: "/images/josh.png", rotate: "-1deg" },
 ];

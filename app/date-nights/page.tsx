@@ -32,7 +32,7 @@ export default function DateNightsPage() {
       <section
         className="relative min-h-[55vh] flex flex-col justify-center text-pearl-white border-t-2 border-charcoal/10 overflow-hidden"
         style={{
-          backgroundImage: "url(/images/gallery-5CC28067-EE5A-453D-9F63-27E0695C0270.png)",
+          backgroundImage: "url(/images/gallery-intimate.png)",
           backgroundSize: "cover",
           backgroundPosition: "center 40%",
         }}
