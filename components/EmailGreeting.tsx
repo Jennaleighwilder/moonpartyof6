@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { SITE } from "@/lib/siteConfig";
+import { SITE, CONTACT } from "@/lib/siteConfig";
 
 /**
  * Premium email capture — high-end greeting, ultimate list builder.
@@ -16,8 +16,22 @@ export function EmailGreeting() {
     e.preventDefault();
     if (!email.trim()) return;
     setStatus("submitting");
-    // TODO: Wire to your email provider (ConvertKit, Mailchimp, Resend, etc.)
-    await new Promise((r) => setTimeout(r, 800));
+    const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+    if (formId) {
+      try {
+        const res = await fetch(`https://formspree.io/f/${formId}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email.trim(), _subject: "Moonpartyof6 — Inner Circle signup" }),
+        });
+        if (!res.ok) throw new Error("Submit failed");
+      } catch {
+        setStatus("error");
+        return;
+      }
+    } else {
+      await new Promise((r) => setTimeout(r, 600));
+    }
     setStatus("success");
     setEmail("");
   };
@@ -42,7 +56,11 @@ export function EmailGreeting() {
               One email. Monthly wisdom. No spam — just the good stuff.
             </p>
 
-            {status === "success" ? (
+            {status === "error" ? (
+              <div className="py-8 px-6 bg-white/90 border border-charcoal/20 rounded-xl">
+                <p className="text-charcoal">Something went wrong. Try again or email us at {CONTACT.email}.</p>
+              </div>
+            ) : status === "success" ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}

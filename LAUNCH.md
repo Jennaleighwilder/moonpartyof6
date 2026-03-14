@@ -46,6 +46,16 @@
 
 ---
 
+## Email capture (Formspree)
+
+1. Go to [formspree.io](https://formspree.io) → Create form
+2. Copy your form ID from the URL: `formspree.io/f/YOUR_ID`
+3. In Vercel: Project → Settings → Environment Variables
+   - Add `NEXT_PUBLIC_FORMSPREE_ID` = `YOUR_ID`
+4. Redeploy. Signups go to your Formspree dashboard and email.
+
+---
+
 ## Your site is ready
 
 - **Build**: ✓ (run `npm run build` anytime)
