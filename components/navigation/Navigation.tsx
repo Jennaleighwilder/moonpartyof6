@@ -47,6 +47,7 @@ export function Navigation() {
         <Link
           href="/"
           className="font-display text-xl md:text-2xl font-normal text-pearl-white hover:text-champagne-gold transition-colors"
+          data-cursor-label="home"
         >
           Dee & Josh Moon
         </Link>
@@ -98,6 +99,7 @@ export function Navigation() {
           <Link
             href="/start-here"
             className="bg-champagne-gold text-obsidian font-bold uppercase tracking-[0.35em] text-xs py-3 px-6 rounded-sm hover:bg-champagne-gold/90 transition-colors"
+            data-cursor-label="step inside"
           >
             Start Here
           </Link>

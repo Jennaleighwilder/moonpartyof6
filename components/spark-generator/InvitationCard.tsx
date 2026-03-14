@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
+import html2canvas from "html2canvas";
 
 type Idea = {
   title: string;
@@ -50,30 +52,60 @@ function openPrintWindow(idea: Idea) {
 }
 
 export function InvitationCard({ idea }: { idea: Idea }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = async () => {
+    if (!cardRef.current) return;
+    try {
+      const canvas = await html2canvas(cardRef.current, {
+        backgroundColor: "#0A0A0A",
+        scale: 2,
+        useCORS: true,
+      });
+      const link = document.createElement("a");
+      link.download = `moonpartyof6-invitation-${idea.title.replace(/\s+/g, "-").toLowerCase()}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    } catch {
+      openPrintWindow(idea);
+    }
+  };
+
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-obsidian to-charcoal text-pearl-white p-8 md:p-12 shadow-[0_25px_80px_-12px_rgba(0,0,0,0.5)]"
+      className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-obsidian to-charcoal text-pearl-white p-8 md:p-12 shadow-[0_25px_80px_-12px_rgba(0,0,0,0.5)] border border-champagne-gold/20"
     >
-      <p className="text-xs uppercase tracking-[0.35em] text-pearl-white/60 mb-4">Your Date Night Blueprint</p>
+      <p className="text-xs uppercase tracking-[0.35em] text-champagne-gold/90 mb-4">Your Date Night Blueprint</p>
       <h3 className="font-display text-3xl md:text-4xl font-normal mb-2">{idea.title}</h3>
       <p className="text-lg italic text-pearl-white/95 mb-6">{idea.tagline}</p>
       {idea.areaHint && (
-        <p className="text-xs uppercase tracking-[0.2em] text-warm-gold/90 mb-6">Moon-approved · {idea.areaHint}</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-champagne-gold/90 mb-6">Moon-approved · {idea.areaHint}</p>
       )}
       <div className="rounded-xl bg-pearl-white/10 backdrop-blur-sm p-6 mb-8">
         <p className="text-sm text-pearl-white/70 mb-2">Text to send them</p>
         <p className="text-lg italic">&ldquo;{idea.text}&rdquo;</p>
       </div>
       <p className="text-[10px] uppercase tracking-[0.4em] text-pearl-white/50">Moonpartyof6 · Intentional Marriage</p>
-      <button
-        onClick={() => openPrintWindow(idea)}
-        className="mt-6 w-full py-4 border border-pearl-white/30 text-pearl-white font-medium uppercase tracking-[0.2em] rounded-xl hover:bg-pearl-white/10 transition-all"
-      >
-        Download / Print Invitation
-      </button>
+      <div className="mt-6 flex gap-3">
+        <button
+          onClick={handleDownload}
+          className="flex-1 py-4 border border-champagne-gold/50 text-champagne-gold font-medium uppercase tracking-[0.2em] rounded-xl hover:bg-champagne-gold/10 transition-all"
+          data-cursor-label="download invitation"
+        >
+          Download My Invitation
+        </button>
+        <button
+          onClick={() => openPrintWindow(idea)}
+          className="px-6 py-4 border border-pearl-white/30 text-pearl-white font-medium uppercase tracking-[0.2em] rounded-xl hover:bg-pearl-white/10 transition-all"
+          data-cursor-label="print"
+        >
+          Print
+        </button>
+      </div>
     </motion.div>
   );
 }
