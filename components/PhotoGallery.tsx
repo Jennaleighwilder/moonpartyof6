@@ -16,6 +16,21 @@ const GALLERY_IMAGES = [
   "/images/hero-couple.png",
   "/images/dee.png",
   "/images/josh.png",
+  "/images/gallery-10-55-48 AM.png",
+  "/images/gallery-10-55-59 AM.png",
+  "/images/gallery-10-56-18 AM.png",
+  "/images/gallery-10-56-28 AM.png",
+  "/images/gallery-10-56-44 AM.png",
+  "/images/gallery-10-56-55 AM.png",
+  "/images/gallery-10-57-10 AM.png",
+  "/images/gallery-10-57-18 AM.png",
+  "/images/gallery-10-57-21 AM.png",
+  "/images/gallery-10-57-25 AM.png",
+  "/images/gallery-10-58-17 AM.png",
+  "/images/gallery-10-58-48 AM.png",
+  "/images/gallery-10-59-03 AM.png",
+  "/images/gallery-10-59-36 AM.png",
+  "/images/gallery-11-00-18 AM.png",
 ];
 
 export function PhotoGallery() {
