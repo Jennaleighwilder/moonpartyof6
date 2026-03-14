@@ -1,5 +1,7 @@
 # Moonpartyof6 — Premium Relationship Brand Website
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FJennaleighwilder%2Fmoonpartyof6)
+
 A luxury-feeling, multi-page relationship and lifestyle website for Dee & Josh Moon (@moonpartyof6).
 
 ## Features
@@ -23,11 +25,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy to Vercel
 
-```bash
-vercel
-```
+**One-click:** Click the **Deploy** button above → Import the repo → Deploy. Done.
 
-Or connect the repo to Vercel for automatic deploys.
+Or from terminal: `vercel` — or connect the repo in [Vercel](https://vercel.com) for automatic deploys on every push.
 
 ## Add your assets
 
