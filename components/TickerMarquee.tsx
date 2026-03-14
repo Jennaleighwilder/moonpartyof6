@@ -5,13 +5,13 @@ const TICKER_TEXT =
 
 export function TickerMarquee() {
   return (
-    <div className="overflow-hidden border-y border-champagne-gold/10 py-4">
+    <div className="overflow-hidden border-y border-charcoal/20 bg-classic-black/5 py-4">
       <div className="flex animate-marquee whitespace-nowrap">
-        <span className="mx-6 text-xs font-bold tracking-[0.35em] uppercase text-pearl-white/95">
+        <span className="mx-6 text-xs font-bold tracking-[0.35em] uppercase text-charcoal/90">
           {TICKER_TEXT}
         </span>
-        <span className="mx-6 text-champagne-gold">✦</span>
-        <span className="mx-6 text-xs font-medium tracking-[0.25em] uppercase text-pearl-white/90">
+        <span className="mx-6 text-deep-red">✦</span>
+        <span className="mx-6 text-xs font-medium tracking-[0.25em] uppercase text-charcoal/80">
           {TICKER_TEXT}
         </span>
       </div>

@@ -28,6 +28,32 @@ export default function DateNightsPage() {
 
       <SparkGenerator variant="editorial" />
 
+      {/* Moon Approved Date Nights — categories */}
+      <section className="section-padding bg-pearl-white border-t border-charcoal/10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
+          <p className="text-xs uppercase tracking-[0.3em] text-charcoal/60 mb-2">Moon Approved</p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold mb-8">Date Nights & Travel</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/date-nights#orlando" className="p-6 bg-white border border-charcoal/10 rounded-xl hover:border-deep-red/30 transition-colors">
+              <h3 className="font-display text-xl font-semibold mb-2">Orlando Date Nights</h3>
+              <p className="text-charcoal text-sm">Local spots we love</p>
+            </Link>
+            <Link href="/date-nights#getaways" className="p-6 bg-white border border-charcoal/10 rounded-xl hover:border-deep-red/30 transition-colors">
+              <h3 className="font-display text-xl font-semibold mb-2">Weekend Getaways</h3>
+              <p className="text-charcoal text-sm">St Thomas, Maine, and beyond</p>
+            </Link>
+            <Link href="/date-nights#restaurants" className="p-6 bg-white border border-charcoal/10 rounded-xl hover:border-deep-red/30 transition-colors">
+              <h3 className="font-display text-xl font-semibold mb-2">Romantic Restaurants</h3>
+              <p className="text-charcoal text-sm">Easterly St Thomas, Winter Park</p>
+            </Link>
+            <Link href="/date-nights#travel" className="p-6 bg-white border border-charcoal/10 rounded-xl hover:border-deep-red/30 transition-colors">
+              <h3 className="font-display text-xl font-semibold mb-2">Travel Guides</h3>
+              <p className="text-charcoal text-sm">FL Date Guide, destinations</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Chapter 2: Where You're Called — travel pic background (no golf cart) */}
       <section
         className="relative min-h-[55vh] flex flex-col justify-center text-pearl-white border-t-2 border-charcoal/10 overflow-hidden"

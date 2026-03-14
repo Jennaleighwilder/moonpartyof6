@@ -4,7 +4,6 @@ import { TickerMarquee } from "@/components/TickerMarquee";
 import { EmailGreeting } from "@/components/EmailGreeting";
 import { QuickAccessGrid } from "@/components/cards/QuickAccessGrid";
 import { MeetTheMoons } from "@/components/cards/MeetTheMoons";
-import { HoverReveal } from "@/components/HoverReveal";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { TwelveIntimacy } from "@/components/TwelveIntimacy";
 import { Partners } from "@/components/Partners";
@@ -30,15 +29,14 @@ export default function HomePage() {
       </section>
       </ScrollReveal>
 
-      <ScrollReveal><HoverReveal /></ScrollReveal>
       <ScrollReveal><PhotoGallery /></ScrollReveal>
       <ScrollReveal><TwelveIntimacy /></ScrollReveal>
       <ScrollReveal><Partners /></ScrollReveal>
       <ScrollReveal><SparkGenerator /></ScrollReveal>
 
-      {/* Featured in — luxury brand bar */}
+      {/* Featured in — VOGUE editorial bar */}
       <ScrollReveal>
-      <section className="section-padding bg-obsidian/90 backdrop-blur-sm border-y border-champagne-gold/10 text-pearl-white">
+      <section className="section-padding bg-classic-black/95 border-y border-charcoal/20 text-pearl-white">
         <div className="max-w-[1200px] mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-champagne-gold/90 mb-8 font-bold">featured in</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-80">
@@ -54,7 +52,7 @@ export default function HomePage() {
       {/* Testimonial — editorial block */}
       <ScrollReveal>
       <section className="section-padding relative -mt-8">
-        <div className="max-w-4xl mx-auto p-8 md:p-12 bg-charcoal/40 backdrop-blur-sm border border-champagne-gold/10 rounded-sm">
+        <div className="max-w-4xl mx-auto p-8 md:p-12 bg-classic-black/90 border border-charcoal/30 rounded-sm">
           <blockquote className="font-display text-4xl md:text-5xl font-normal text-pearl-white leading-[1.4]">
             &ldquo;Dee and Josh are the real deal. They helped us actually talk to each other again.&rdquo;
           </blockquote>
@@ -63,35 +61,58 @@ export default function HomePage() {
       </section>
       </ScrollReveal>
 
+      {/* Encouraged — DMs & messages from those we've encouraged */}
+      <ScrollReveal>
+      <section className="section-padding border-t border-charcoal/20">
+        <div className="max-w-[1200px] mx-auto">
+          <p className="text-center text-xs uppercase tracking-[0.3em] text-deep-red/90 mb-8 font-bold">encouraged</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 bg-white border border-charcoal/10 rounded-lg shadow-sm">
+              <p className="text-charcoal italic">&ldquo;Your content changed how we communicate. Thank you.&rdquo;</p>
+              <p className="text-xs text-charcoal/60 mt-3">— DM</p>
+            </div>
+            <div className="p-6 bg-white border border-charcoal/10 rounded-lg shadow-sm">
+              <p className="text-charcoal italic">&ldquo;We tried the date idea and it was exactly what we needed.&rdquo;</p>
+              <p className="text-xs text-charcoal/60 mt-3">— DM</p>
+            </div>
+            <div className="p-6 bg-white border border-charcoal/10 rounded-lg shadow-sm md:col-span-2 lg:col-span-1">
+              <p className="text-charcoal italic">&ldquo;Finally someone who gets it. You two are a gift.&rdquo;</p>
+              <p className="text-xs text-charcoal/60 mt-3">— DM</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </ScrollReveal>
+
       {/* Quiz CTA */}
       <ScrollReveal>
-      <section className="section-padding border-y border-champagne-gold/10">
+      <section className="section-padding border-y border-charcoal/20">
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
-            <p className="font-display text-4xl md:text-5xl font-normal tracking-tight text-pearl-white">
+            <p className="font-display text-4xl md:text-5xl font-normal tracking-tight text-classic-black">
               not sure where to begin?
             </p>
-            <p className="text-sleek-silver/80 text-sm mt-3 max-w-md">
+            <p className="text-charcoal/80 text-sm mt-3 max-w-md">
               Four paths. Romance. Role play. The hard work. Pick the one that calls you.
             </p>
           </div>
-          <Link href="/quiz" className="shrink-0 px-10 py-4 bg-champagne-gold text-obsidian font-bold rounded-sm hover:bg-champagne-gold/90 transition-all text-xs uppercase tracking-[0.4em] tap-scale">
+          <Link href="/quiz" className="shrink-0 px-10 py-4 bg-deep-red text-pearl-white font-bold rounded-sm hover:bg-mahogany transition-all text-xs uppercase tracking-[0.4em] tap-scale">
             choose your path
           </Link>
         </div>
       </section>
       </ScrollReveal>
 
-      {/* Social + Videos */}
+      {/* Social */}
       <ScrollReveal>
-      <section className="section-padding border-t border-champagne-gold/10">
+      <section className="section-padding border-t border-charcoal/20">
         <div className="max-w-xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-sleek-silver/95 mb-4">follow</p>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-charcoal/80 mb-4">follow</p>
           <SocialLinks variant="inline" />
-          <a href={SITE.handleLink} target="_blank" rel="noopener noreferrer" className="text-champagne-gold hover:text-champagne-gold/80 font-bold text-xs mt-3 inline-block tracking-[0.25em] uppercase">
+          <a href={SITE.handleLink} target="_blank" rel="noopener noreferrer" className="text-deep-red hover:text-mahogany font-bold text-xs mt-3 inline-block tracking-[0.25em] uppercase">
             {SITE.handle}
           </a>
-          <Link href="/media-press" className="block mt-6 text-champagne-gold/90 hover:text-champagne-gold font-medium text-sm">
+          <Link href="/media-press" className="block mt-6 text-charcoal hover:text-deep-red font-medium text-sm">
             Watch on TikTok & Instagram →
           </Link>
         </div>

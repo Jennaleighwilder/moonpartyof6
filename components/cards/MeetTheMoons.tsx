@@ -10,8 +10,8 @@ export function MeetTheMoons() {
 
   return (
     <div className="grid md:grid-cols-2 gap-8">
-      <Link href="/mrs-moon" className="group block p-8 bg-charcoal/40 backdrop-blur-sm rounded-xl border border-champagne-gold/10 hover:border-champagne-gold/30 card-hover transition-all tap-scale">
-        <div className="aspect-square bg-obsidian/60 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
+      <Link href="/mrs-moon" className="group block p-8 bg-white rounded-xl border border-charcoal/10 hover:border-deep-red/30 card-hover transition-all tap-scale shadow-sm">
+        <div className="aspect-square bg-charcoal/5 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
           {!deeError && (
             <Image
               src="/images/dee.png"
@@ -24,13 +24,13 @@ export function MeetTheMoons() {
           )}
           {deeError && <span className="text-4xl">✨</span>}
         </div>
-        <h3 className="font-display text-2xl font-normal mb-1 group-hover:text-champagne-gold transition-colors text-pearl-white">Dee Moon</h3>
-        <p className="text-sleek-silver/80 text-sm mb-4">counselor · speaker</p>
-        <p className="text-sleek-silver/90 text-sm mb-4">MA in Counseling, crisis hotline veteran, helps couples go deeper without the cringe.</p>
-        <span className="text-champagne-gold font-bold text-xs uppercase tracking-[0.25em]">meet dee →</span>
+        <h3 className="font-display text-2xl font-normal mb-1 group-hover:text-deep-red transition-colors text-classic-black">Dee Moon</h3>
+        <p className="text-charcoal/70 text-sm mb-4">counselor · speaker</p>
+        <p className="text-charcoal/80 text-sm mb-4">MA in Counseling, crisis hotline veteran, helps couples go deeper without the cringe.</p>
+        <span className="text-deep-red font-bold text-xs uppercase tracking-[0.25em]">meet dee →</span>
       </Link>
-      <Link href="/mr-moon" className="group block p-8 bg-charcoal/40 backdrop-blur-sm rounded-xl border border-champagne-gold/10 hover:border-champagne-gold/30 card-hover transition-all tap-scale">
-        <div className="aspect-square bg-obsidian/60 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
+      <Link href="/mr-moon" className="group block p-8 bg-white rounded-xl border border-charcoal/10 hover:border-deep-red/30 card-hover transition-all tap-scale shadow-sm">
+        <div className="aspect-square bg-charcoal/5 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
           {!joshError && (
             <Image
               src="/images/josh.png"
@@ -43,10 +43,10 @@ export function MeetTheMoons() {
           )}
           {joshError && <span className="text-4xl">🌟</span>}
         </div>
-        <h3 className="font-display text-2xl font-normal mb-1 group-hover:text-champagne-gold transition-colors text-pearl-white">Josh Moon</h3>
-        <p className="text-sleek-silver/80 text-sm mb-4">mba · romance advocate</p>
-        <p className="text-sleek-silver/90 text-sm mb-4">Accountant by trade, husband by passion. Helps men show up intentionally.</p>
-        <span className="text-champagne-gold font-bold text-xs uppercase tracking-[0.25em]">meet josh →</span>
+        <h3 className="font-display text-2xl font-normal mb-1 group-hover:text-deep-red transition-colors text-classic-black">Josh Moon</h3>
+        <p className="text-charcoal/70 text-sm mb-4">mba · romance advocate</p>
+        <p className="text-charcoal/80 text-sm mb-4">Accountant by trade, husband by passion. Helps men show up intentionally.</p>
+        <span className="text-deep-red font-bold text-xs uppercase tracking-[0.25em]">meet josh →</span>
       </Link>
     </div>
   );

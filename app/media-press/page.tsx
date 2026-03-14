@@ -38,13 +38,40 @@ export default function MediaPressPage() {
             </div>
           </div>
 
-          {/* TikTok — video links + CTA */}
+          {/* Video Library — organized by topic */}
+          <div className="mb-12">
+            <h3 className="font-display text-2xl font-semibold mb-4">Video Library</h3>
+            <p className="text-charcoal mb-6">Our best reels organized by topic.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <a href={`${TIKTOK.profile}?q=communication`} target="_blank" rel="noopener noreferrer" className="p-6 bg-white border border-charcoal/10 rounded-lg hover:border-deep-red/30 transition-colors">
+                <span className="font-display text-lg font-semibold">Communication</span>
+              </a>
+              <a href={`${TIKTOK.profile}?q=date%20night`} target="_blank" rel="noopener noreferrer" className="p-6 bg-white border border-charcoal/10 rounded-lg hover:border-deep-red/30 transition-colors">
+                <span className="font-display text-lg font-semibold">Date Night Ideas</span>
+              </a>
+              <a href={`${TIKTOK.profile}?q=marriage`} target="_blank" rel="noopener noreferrer" className="p-6 bg-white border border-charcoal/10 rounded-lg hover:border-deep-red/30 transition-colors">
+                <span className="font-display text-lg font-semibold">Marriage Advice</span>
+              </a>
+              <a href={`${TIKTOK.profile}?q=funny`} target="_blank" rel="noopener noreferrer" className="p-6 bg-white border border-charcoal/10 rounded-lg hover:border-deep-red/30 transition-colors">
+                <span className="font-display text-lg font-semibold">Funny Couples Content</span>
+              </a>
+            </div>
+          </div>
+
+          {/* TikTok + Instagram — viral content */}
           <div className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-charcoal to-classic-black text-pearl-white">
-            <h3 className="font-display text-2xl font-semibold mb-2">TikTok — @moonpartyof6</h3>
-            <p className="text-pearl-white/80 mb-6">More viral moments, date ideas, and real marriage content.</p>
-            <a href={TIKTOK.profile} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-deep-red text-pearl-white font-bold rounded-lg hover:bg-mahogany transition-all hover:scale-105">
-              Watch on TikTok →
-            </a>
+            <h3 className="font-display text-2xl font-semibold mb-2">TikTok — {SITE.handle}</h3>
+            <p className="text-pearl-white/80 mb-4">Viral moments, date ideas, and real marriage content.</p>
+            <h3 className="font-display text-xl font-semibold mt-6 mb-2">Instagram — {SITE.handle}</h3>
+            <p className="text-pearl-white/80 mb-6">Reels, behind-the-scenes, and lifestyle.</p>
+            <div className="flex flex-wrap gap-4">
+              <a href={TIKTOK.profile} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-deep-red text-pearl-white font-bold rounded-lg hover:bg-mahogany transition-all hover:scale-105">
+                Watch on TikTok →
+              </a>
+              <a href={SITE.handleLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-pearl-white/10 text-pearl-white font-bold rounded-lg hover:bg-pearl-white/20 transition-all border border-pearl-white/30">
+                View on Instagram →
+              </a>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -59,7 +86,7 @@ export default function MediaPressPage() {
               <h3 className="font-display text-xl font-semibold mb-2">Instagram Reels</h3>
               <p className="text-charcoal mb-4">Short-form content on Instagram</p>
               <a href={SITE.handleLink} target="_blank" rel="noopener noreferrer" className="text-deep-red hover:underline text-sm">
-                View @moonpartyof6 on Instagram →
+                View {SITE.handle} on Instagram →
               </a>
             </div>
           </div>

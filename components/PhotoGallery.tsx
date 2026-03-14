@@ -18,7 +18,7 @@ const GALLERY_IMAGES = [
 export function PhotoGallery() {
   return (
     <section className="section-padding relative overflow-hidden">
-      <p className="text-center font-mono text-[11px] uppercase tracking-[0.25em] text-sleek-silver/95 mb-12">
+      <p className="text-center font-mono text-[11px] uppercase tracking-[0.25em] text-charcoal/80 mb-12">
         real life · real love
       </p>
       {/* Anti-grid collage — overlapping, clip-path, negative margins */}
@@ -27,8 +27,8 @@ export function PhotoGallery() {
           {GALLERY_IMAGES.map((item, i) => (
             <motion.div
               key={item.src}
-              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.7 }}
               style={{ rotate: item.rotate, zIndex: i % 3 === 0 ? 2 : 1, clipPath: i % 3 === 0 ? "polygon(1% 0%, 99% 1%, 100% 99%, 0% 98%)" : undefined }}

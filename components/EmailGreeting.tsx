@@ -37,12 +37,12 @@ export function EmailGreeting() {
   };
 
   return (
-    <section id="email" className="relative overflow-hidden scroll-mt-20">
+    <section id="email" className="relative overflow-hidden scroll-mt-20 bg-classic-black/95">
       <div className="relative z-10 section-padding">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
@@ -53,7 +53,7 @@ export function EmailGreeting() {
               Join the Inner Circle
             </h2>
             <p className="text-sleek-silver/90 text-sm md:text-base mb-10 max-w-md mx-auto leading-relaxed">
-              One email. Monthly wisdom. No spam — just the good stuff.
+              Monthly emails about relationships, communication, romance ideas, and behind-the-scenes life. No spam — just the good stuff.
             </p>
 
             {status === "error" ? (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Montserrat, Roboto_Slab, JetBrains_Mono } from "next/font/google";
+import { Playfair_Display, Montserrat, Roboto_Slab, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -9,10 +9,10 @@ import { NeedleCursor } from "@/components/NeedleCursor";
 import { AmbientBackground } from "@/components/AmbientBackground";
 import { BackgroundManager } from "@/components/BackgroundManager";
 
-const bodoniModa = Bodoni_Moda({
-  variable: "--font-bodoni",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -51,9 +51,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bodoniModa.variable} ${montserrat.variable} ${robotoSlab.variable} ${jetbrainsMono.variable}`}
+      className={`${playfairDisplay.variable} ${montserrat.variable} ${robotoSlab.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans bg-obsidian text-pearl-white antialiased relative min-h-screen">
+      <body className="font-sans bg-vellum text-classic-black antialiased relative min-h-screen">
         <BackgroundManager />
         <AmbientBackground />
         <NeedleCursor />

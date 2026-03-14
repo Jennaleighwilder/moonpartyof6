@@ -44,11 +44,11 @@ export function BackgroundManager() {
 
   return (
     <>
-      {/* Entrance: clean neutral dark */}
+      {/* Entrance: VOGUE editorial — warm cream, storytelling of love */}
       {roomKey === "entrance" && (
         <div
           className="fixed inset-0 -z-[3] transition-[background] duration-1000"
-          style={{ background: "linear-gradient(180deg, #111111 0%, #0f0f0f 50%, #111111 100%)" }}
+          style={{ background: "linear-gradient(180deg, #F8F5F2 0%, #F5F2E9 50%, #F0EDE8 100%)" }}
         />
       )}
       {/* Dee: warm charcoal (softer than mahogany) */}
@@ -77,11 +77,11 @@ export function BackgroundManager() {
           />
         </>
       )}
-      {/* Library: neutral dark */}
+      {/* Library: warm cream — editorial, not dark */}
       {roomKey === "library" && (
         <div
           className="fixed inset-0 -z-[3] transition-[background] duration-1000"
-          style={{ background: "linear-gradient(180deg, #111111 0%, #151413 30%, #131212 70%, #111111 100%)" }}
+          style={{ background: "linear-gradient(180deg, #F8F5F2 0%, #F5F2E9 50%, #F0EDE8 100%)" }}
         />
       )}
       {/* Resources: Aged Vellum #F5F2E9 — LIGHT room */}

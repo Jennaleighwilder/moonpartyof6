@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Hero: Dee's photos from doc — Maine, St Thomas, couple moments
-const HERO_BG = "/images/dee-doc-12.png";
-const HERO_CARD = "/images/dee-doc-8.png";
+// Hero: couple photo — avoid dee-doc-12 (unflattering), NO candles for floating card
+const HERO_BG = "/images/dee-doc-14.png";
+const HERO_CARD = "/images/dee-doc-9.png";
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -18,8 +18,8 @@ export function Hero() {
       <motion.div
         style={{
           y,
-          backgroundImage: `linear-gradient(120deg, rgba(10,10,10,0.75) 0%, rgba(20,20,20,0.5) 50%, rgba(30,30,30,0.3) 100%), url(${HERO_BG})`,
-          backgroundColor: "#0A0A0A",
+          backgroundImage: `linear-gradient(105deg, rgba(20,15,15,0.6) 0%, rgba(30,25,25,0.35) 45%, rgba(40,35,35,0.2) 100%), url(${HERO_BG})`,
+          backgroundColor: "#1a1515",
           backgroundPosition: "center 30%",
         }}
         className="absolute inset-0 bg-cover bg-no-repeat"
