@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { getDateIdea, buildShareUrl, AREAS } from "@/lib/dateIdeas";
 import { DateNightShareBar } from "./DateNightShareBar";
+import { InvitationCard } from "./InvitationCard";
+import { BlueprintMap } from "./BlueprintMap";
 
 const VIBES = [
   { id: "stayIn", label: "Stay In", desc: "Couch, candles, connection" },
@@ -53,7 +55,7 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
   const shareUrl = result ? buildShareUrl({ vibe, spice, time, area: area || undefined }) : "";
 
   return (
-    <section className={`section-padding ${isEditorial ? "bg-deep-red/95" : "bg-cream"}`}>
+    <section className={`section-padding ${isEditorial ? "bg-deep-red/95" : "bg-vellum"}`}>
       <div className={`max-w-2xl mx-auto ${isEditorial ? "" : ""}`}>
         {!isEditorial && (
           <>
@@ -274,11 +276,23 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
               </div>
 
               <div className={`p-8 ${isEditorial ? "text-pearl-white" : ""}`}>
+                <div className="mb-8">
+                  <InvitationCard idea={result!} />
+                </div>
                 <p className={isEditorial ? "text-pearl-white/85 mb-6" : "text-charcoal mb-6"}>{result!.desc}</p>
 
-                <div className={`rounded-xl p-5 mb-6 ${isEditorial ? "bg-pearl-white/10 border border-pearl-white/20" : "bg-pearl-white/80 border border-charcoal/10"}`}>
-                  <p className={`text-xs uppercase tracking-wider mb-2 font-medium ${isEditorial ? "text-pearl-white/60" : "text-charcoal"}`}>Text to send them</p>
-                  <p className={`mb-4 italic ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>&ldquo;{result!.text}&rdquo;</p>
+                {/* Blueprint: Map + Transit when location-specific */}
+                {result!.place && (
+                  <div className="mb-8">
+                    <p className={`font-mono text-[9px] uppercase tracking-[0.3em] mb-3 ${isEditorial ? "text-pearl-white/50" : "text-charcoal/60"}`}>Your Night · Map</p>
+                    <BlueprintMap place={result!.place} isEditorial={isEditorial} />
+                  </div>
+                )}
+
+                {/* Lover's Note — Vibe Check (handwritten feel) */}
+                <div className={`rounded-xl p-6 mb-6 ${isEditorial ? "bg-pearl-white/5 border border-pearl-white/20" : "bg-pearl-white/80 border border-charcoal/10"}`}>
+                  <p className={`font-mono text-[9px] uppercase tracking-[0.2em] mb-3 ${isEditorial ? "text-pearl-white/50" : "text-charcoal/60"}`}>Lover&apos;s Note · Vibe Check</p>
+                  <p className={`mb-4 font-display text-lg italic leading-relaxed ${isEditorial ? "text-pearl-white" : "text-classic-black"}`}>&ldquo;{result!.text}&rdquo;</p>
                   <DateNightShareBar url={shareUrl} title={result!.title} text={result!.text} />
                 </div>
 

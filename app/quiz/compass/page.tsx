@@ -14,15 +14,21 @@ export default function CompassQuizPage() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
+  const [exiting, setExiting] = useState(false);
 
   const currentQ = QUESTIONS[step];
   const handleSelect = (opt: string) => {
+    if (exiting) return;
+    setExiting(true);
     setAnswers({ ...answers, [currentQ.id]: opt });
-    if (step < QUESTIONS.length - 1) {
-      setStep(step + 1);
-    } else {
-      setDone(true);
-    }
+    setTimeout(() => {
+      if (step < QUESTIONS.length - 1) {
+        setStep(step + 1);
+      } else {
+        setDone(true);
+      }
+      setExiting(false);
+    }, 350);
   };
 
   return (
@@ -30,42 +36,45 @@ export default function CompassQuizPage() {
       {/* Editorial header — compass identity */}
       <section className="border-b border-pearl-white/10">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-12">
-          <Link href="/quiz" className="text-xs uppercase tracking-widest text-pearl-white/50 hover:text-pearl-white transition-colors">
+          <Link href="/quiz" className="font-mono text-[9px] uppercase tracking-[0.3em] text-pearl-white/50 hover:text-pearl-white transition-colors tap-scale">
             ← choose another path
           </Link>
-          <p className="text-xs uppercase tracking-[0.3em] text-deep-red/80 mt-6">Relationship Compass</p>
+          <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-deep-red/80 mt-6">Relationship Compass</p>
           <h1 className="font-display text-3xl md:text-4xl font-normal mt-2">
             Focus · Time · Format
           </h1>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="max-w-2xl mx-auto">
+      {/* Card Stack — flick to answer */}
+      <section className="section-padding min-h-[60vh] flex items-center">
+        <div className="max-w-2xl mx-auto w-full relative">
           <AnimatePresence mode="wait">
             {!done ? (
               <motion.div
                 key={step}
-                initial={{ opacity: 0, x: 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -24 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, scale: 0.96, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, x: -120, rotate: -8, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] } }}
+                transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="relative bg-charcoal/80 backdrop-blur-sm border border-pearl-white/10 rounded-2xl p-8 md:p-10 shadow-[0_25px_80px_-12px_rgba(0,0,0,0.5)]"
               >
-                <p className="text-xs uppercase tracking-wider text-pearl-white/50 mb-6">
-                  Question {step + 1} of {QUESTIONS.length}
+                <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-pearl-white/50 mb-6">
+                  {step + 1} / {QUESTIONS.length}
                 </p>
                 <h2 className="font-display text-2xl md:text-3xl font-normal mb-10 leading-relaxed">
                   {currentQ.q}
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {currentQ.options.map((opt) => (
-                    <button
+                    <motion.button
                       key={opt}
                       onClick={() => handleSelect(opt)}
-                      className="w-full p-5 text-left rounded-xl border border-pearl-white/15 hover:border-deep-red/50 hover:bg-deep-red/10 transition-all duration-300"
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full p-5 text-left rounded-xl border border-pearl-white/15 hover:border-deep-red/50 hover:bg-deep-red/10 transition-colors duration-300 tap-scale"
                     >
                       <span className="text-pearl-white/90">{opt}</span>
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
                 <div className="flex gap-2 mt-10">

@@ -12,7 +12,7 @@ const CARDS = [
 
 export function QuickAccessGrid() {
   return (
-    <section className="section-padding bg-cream">
+    <section className="section-padding bg-vellum">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {CARDS.map((card, i) => (
@@ -25,14 +25,14 @@ export function QuickAccessGrid() {
             >
               <Link
                 href={card.href}
-                className="block p-8 rounded-xl border border-charcoal/5 bg-white hover:border-charcoal/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
+                className="block p-8 rounded-sm border border-charcoal/5 bg-white hover:border-charcoal/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group tap-scale"
               >
-                <span className="text-xs uppercase tracking-[0.3em] text-charcoal/60 font-bold">{card.label}</span>
+                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-charcoal/50">{card.label}</span>
                 <h3 className="font-display text-2xl font-normal text-charcoal mt-3 group-hover:text-charcoal transition-colors duration-300 leading-[1.4]">
                   {card.title}
                 </h3>
-                <p className="text-charcoal/70 text-sm mt-2 leading-relaxed">{card.desc}</p>
-                <span className="inline-block mt-4 text-xs font-bold uppercase tracking-[0.2em] text-charcoal/70">
+                <p className="font-slab text-charcoal/70 text-sm mt-2 leading-relaxed">{card.desc}</p>
+                <span className="inline-block mt-4 font-mono text-[9px] uppercase tracking-[0.2em] text-charcoal/60">
                   {card.badge}
                 </span>
               </Link>

@@ -5,34 +5,43 @@ import Link from "next/link";
 import { SocialLinks } from "@/components/SocialLinks";
 import { SITE } from "@/lib/siteConfig";
 
+/** Executive Desk — Launchpad-style display options. Minimalist icons, stationary layout. */
 function DisplayOptions() {
   const [open, setOpen] = useState(false);
+  const [adhd, setAdhd] = useState(false);
+  const [contrast, setContrast] = useState(false);
+  const [motion, setMotion] = useState(false);
   return (
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="text-sleek-silver hover:text-warm-gold text-xs uppercase tracking-wider transition-colors"
+        className="font-mono text-[9px] uppercase tracking-[0.3em] text-sleek-silver hover:text-warm-gold transition-colors tap-scale"
         aria-expanded={open}
       >
-        Display options
+        Display
       </button>
       {open && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
-          <div className="absolute bottom-full right-0 mb-2 z-50 w-56 p-4 bg-charcoal rounded-lg border border-charcoal/50 shadow-xl">
-            <p className="text-xs text-sleek-silver mb-3">Adjust how the site displays</p>
-            <label className="flex items-center gap-2 cursor-pointer text-sm text-pearl-white/90 mb-2">
-              <input type="checkbox" onChange={(e) => document.documentElement.classList.toggle("adhd-focus", e.target.checked)} className="rounded" />
-              <span>Calm focus (reduced motion, narrower text)</span>
-            </label>
-            <label className="flex items-center gap-2 cursor-pointer text-sm text-pearl-white/90 mb-2">
-              <input type="checkbox" onChange={(e) => document.documentElement.classList.toggle("high-contrast", e.target.checked)} className="rounded" />
-              <span>High contrast</span>
-            </label>
-            <label className="flex items-center gap-2 cursor-pointer text-sm text-pearl-white/90">
-              <input type="checkbox" onChange={(e) => document.documentElement.classList.toggle("reduce-motion", e.target.checked)} className="rounded" />
-              <span>Reduce motion</span>
-            </label>
+          <div className="absolute bottom-full right-0 mb-2 z-50 w-64 p-5 bg-charcoal/95 backdrop-blur-md rounded-sm border border-pearl-white/10 shadow-[0_20px_60px_-12px_rgba(0,0,0,0.5)]">
+            <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-pearl-white/50 mb-4">Launchpad</p>
+            <div className="flex flex-col gap-1">
+              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-colors group">
+                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs ${adhd ? "border-warm-gold bg-warm-gold/20 text-warm-gold" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-warm-gold/50"}`}>⊙</span>
+                <input type="checkbox" checked={adhd} onChange={(e) => { setAdhd(e.target.checked); document.documentElement.classList.toggle("adhd-focus", e.target.checked); }} className="sr-only" />
+                <span className="text-sm text-pearl-white/90">Calm focus</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-colors group">
+                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs ${contrast ? "border-warm-gold bg-warm-gold/20 text-warm-gold" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-warm-gold/50"}`}>◐</span>
+                <input type="checkbox" checked={contrast} onChange={(e) => { setContrast(e.target.checked); document.documentElement.classList.toggle("high-contrast", e.target.checked); }} className="sr-only" />
+                <span className="text-sm text-pearl-white/90">High contrast</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer py-2 px-3 rounded hover:bg-pearl-white/5 transition-colors group">
+                <span className={`w-6 h-6 flex items-center justify-center rounded border text-xs ${motion ? "border-warm-gold bg-warm-gold/20 text-warm-gold" : "border-pearl-white/20 text-pearl-white/60 group-hover:border-warm-gold/50"}`}>◷</span>
+                <input type="checkbox" checked={motion} onChange={(e) => { setMotion(e.target.checked); document.documentElement.classList.toggle("reduce-motion", e.target.checked); }} className="sr-only" />
+                <span className="text-sm text-pearl-white/90">Reduce motion</span>
+              </label>
+            </div>
           </div>
         </>
       )}

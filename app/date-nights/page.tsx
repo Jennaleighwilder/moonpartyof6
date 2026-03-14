@@ -1,5 +1,6 @@
 import { SparkGenerator } from "@/components/spark-generator/SparkGenerator";
 import { TravelQuiz } from "@/components/travel-quiz/TravelQuiz";
+import { HorizontalCarousel } from "@/components/carousels/HorizontalCarousel";
 import Link from "next/link";
 
 // Each section = its own magazine chapter. Choose your own adventure.
@@ -74,18 +75,8 @@ export default function DateNightsPage() {
           <p className="mt-6 text-pearl-white/60 max-w-xl">
             The kind of places that feel like they were made for you.
           </p>
-          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: "Winter Park — Park Avenue", desc: "Stroll, shop, share a gelato. Old Florida charm." },
-              { name: "Lake Eola — Orlando", desc: "Swan boats, sunset, and the city skyline." },
-              { name: "St. Augustine — St. George Street", desc: "Cobblestones, courtyards, centuries of romance." },
-              { name: "Key West — Mallory Square", desc: "Sunset ritual. Street performers. Salt air." },
-            ].map((spot) => (
-              <div key={spot.name} className="p-6 rounded-xl border border-pearl-white/10 hover:border-deep-red/30 hover:bg-deep-red/5 transition-all">
-                <h3 className="font-display text-lg font-normal">{spot.name}</h3>
-                <p className="text-sm text-pearl-white/60 mt-2">{spot.desc}</p>
-              </div>
-            ))}
+          <div className="mt-12">
+            <HorizontalCarousel />
           </div>
           <div className="mt-12">
             <Link href="/lovers" className="text-deep-red/90 hover:text-deep-red font-medium text-sm">

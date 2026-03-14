@@ -64,7 +64,7 @@ function RevealCard({ title, text, image }: { title: string; text: string; image
         group relative overflow-hidden rounded-[24px] min-h-[280px]
         transition-all duration-500 ease-out
         ${hovered
-          ? "border border-charcoal/20 shadow-xl -translate-y-1 scale-[1.02]"
+          ? "shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] -translate-y-1 scale-[1.02]"
           : "border border-transparent opacity-95"
         }
       `}

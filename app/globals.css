@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --obsidian: #0A0A0A;
     --deep-red: #7A0C18;
     --classic-black: #111111;
     --charcoal: #252421;
@@ -13,6 +14,17 @@
     --cream: #e7ded4;
     --warm-gold: #A96F13;
     --gold-light: #C9A962;
+  }
+
+  /* Zine Edition — paper texture overlay (5% opacity) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
 
   html {
@@ -91,19 +103,73 @@ html.reduce-motion .ken-burns {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-deep-red text-pearl-white font-bold uppercase tracking-[0.35em] text-sm transition-all duration-300 hover:bg-mahogany;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-deep-red text-pearl-white font-bold uppercase tracking-[0.35em] text-sm transition-all duration-300 hover:bg-mahogany tap-scale;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-warm-gold text-warm-gold font-bold uppercase tracking-[0.35em] text-sm transition-all duration-300 hover:bg-warm-gold/10 hover:border-warm-gold;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-warm-gold text-warm-gold font-bold uppercase tracking-[0.35em] text-sm transition-all duration-300 hover:bg-warm-gold/10 hover:border-warm-gold tap-scale;
   }
 
   .btn-primary:hover,
   .btn-secondary:hover {
     transform: translateY(-1px);
   }
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: scale(0.98);
+  }
 
   .card-hover {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  /* Luxury editorial — film still imagery */
+  .image-film-still {
+    @apply object-cover transition-transform duration-700;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  }
+  .image-film-still:hover {
+    transform: scale(1.03);
+  }
+
+  /* Subhead — wide-tracked minimalist */
+  .subhead-editorial {
+    @apply font-sans text-sm uppercase tracking-[0.1em] font-light;
+  }
+
+  /* Hide scrollbar for carousel */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Zine Edition — cut-out effect (physically pasted look) */
+  .cut-out {
+    box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.35), 0 4px 12px -4px rgba(0, 0, 0, 0.2);
+  }
+  .cut-out:hover {
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.4), 0 8px 20px -6px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Tactile — scale-down on click */
+  .tap-scale:active {
+    transform: scale(0.98);
+  }
+  .tap-scale {
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Blur-to-clear on entry (for sections) */
+  .blur-reveal {
+    animation: blurReveal 0.8s ease-out forwards;
+  }
+  @keyframes blurReveal {
+    from {
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
   }
 }

@@ -8,6 +8,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        obsidian: "#0A0A0A",
+        vellum: "#F8F5F2",
         "deep-red": "#7A0C18",
         "classic-black": "#111111",
         charcoal: "#252421",
@@ -22,7 +24,9 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-bodoni)", "serif"],
         serif: ["var(--font-bodoni)", "serif"],
+        slab: ["var(--font-roboto-slab)", "serif"],
         sans: ["var(--font-montserrat)", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "monospace"],
       },
       spacing: {
         section: "3rem",

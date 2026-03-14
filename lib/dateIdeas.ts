@@ -11,6 +11,14 @@ export type DateIdea = {
   wisdom: string;
   tip: string;
   areaHint?: string; // e.g. "Orlando" — shown when area-specific
+  /** Blueprint: place for maps/transit when area-specific */
+  place?: {
+    name: string;
+    address: string;
+    lat: number;
+    lng: number;
+    query: string; // for Google Maps / Uber
+  };
 };
 
 export const AREAS = [
@@ -110,12 +118,14 @@ const ORLANDO_IDEAS: Record<string, DateIdea> = {
     desc: "Reserve at The Ravenous Pig, Prato, or Canvas Restaurant. Orlando's best kept secrets for a surprise dinner. Don't tell them where.",
     tip: "The Ravenous Pig's intimate bar or Prato's patio — both Moon-approved.",
     areaHint: "Orlando",
+    place: { name: "The Ravenous Pig", address: "565 W Fairbanks Ave, Winter Park, FL", lat: 28.5976, lng: -81.3521, query: "The+Ravenous+Pig+Winter+Park+FL" },
   },
   goOut_tender_120: {
     ...BASE_IDEAS.goOut_tender_120,
     desc: "Lake Eola at sunset. Walk the loop, rent a swan boat, then dessert at Se7en Bites or The Glass Knife. Hold hands. No agenda.",
     tip: "Swan boats close at dusk — go an hour before for golden hour.",
     areaHint: "Orlando",
+    place: { name: "Lake Eola Park", address: "512 E Washington St, Orlando, FL", lat: 28.5442, lng: -81.3750, query: "Lake+Eola+Park+Orlando+FL" },
   },
   goOut_flirty_120: {
     title: "Winter Park Stroll + Wine",
@@ -125,6 +135,7 @@ const ORLANDO_IDEAS: Record<string, DateIdea> = {
     wisdom: "Walkable, romantic, and full of options. The variety keeps conversation flowing.",
     tip: "Park at the garage on New England — free after 6.",
     areaHint: "Orlando",
+    place: { name: "Park Avenue Winter Park", address: "Park Ave, Winter Park, FL", lat: 28.6001, lng: -81.3392, query: "Park+Avenue+Winter+Park+FL" },
   },
 };
 

@@ -1,26 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const HERO_BG = "/images/hero-maine.png";
 const HERO_CARD = "/images/gallery-beach.png";
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 600], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0.3]);
+
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden hero-paper-texture">
-      {/* Background: Maine photo — snow, camel hat, pullover */}
-      <div
-        className="absolute inset-0 bg-cover bg-no-repeat"
+      {/* Background: Maine photo — parallax */}
+      <motion.div
         style={{
-          backgroundImage: `linear-gradient(120deg, rgba(17,17,17,0.88) 0%, rgba(46,46,46,0.6) 40%, rgba(46,46,46,0.5) 70%, rgba(60,60,60,0.3) 100%), url(${HERO_BG})`,
-          backgroundColor: "#111111",
+          y,
+          backgroundImage: `linear-gradient(120deg, rgba(10,10,10,0.92) 0%, rgba(26,26,26,0.7) 40%, rgba(46,46,46,0.5) 70%, rgba(60,60,60,0.3) 100%), url(${HERO_BG})`,
+          backgroundColor: "#0A0A0A",
           backgroundPosition: "center 30%",
         }}
+        className="absolute inset-0 bg-cover bg-no-repeat"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(122,12,24,0.15)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(122,12,24,0.12)_0%,transparent_50%)]" />
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-16">
+      <motion.div style={{ opacity }} className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: copy */}
           <div>
@@ -71,12 +76,12 @@ export function Hero() {
           </div>
           {/* Right: different photo — not same as background */}
           <div className="hidden lg:flex items-center justify-center animate-float">
-            <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-pearl-white/20 shadow-2xl">
+            <div className="w-full aspect-[4/3] overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] image-film-still">
               <img src={HERO_CARD} alt="Dee and Josh Moon" className="w-full h-full object-cover object-top" />
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

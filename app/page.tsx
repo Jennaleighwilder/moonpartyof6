@@ -10,6 +10,7 @@ import { TwelveIntimacy } from "@/components/TwelveIntimacy";
 import { Partners } from "@/components/Partners";
 import { SparkGenerator } from "@/components/spark-generator/SparkGenerator";
 import { SocialLinks } from "@/components/SocialLinks";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { SITE } from "@/lib/siteConfig";
 
 export default function HomePage() {
@@ -17,24 +18,27 @@ export default function HomePage() {
     <>
       <Hero />
       <TickerMarquee />
-      <EmailGreeting />
-      <QuickAccessGrid />
+      <ScrollReveal><EmailGreeting /></ScrollReveal>
+      <ScrollReveal><QuickAccessGrid /></ScrollReveal>
 
       {/* Moons */}
-      <section className="section-padding bg-cream">
+      <ScrollReveal>
+      <section className="section-padding bg-vellum">
         <div className="max-w-[1400px] mx-auto">
           <MeetTheMoons />
         </div>
       </section>
+      </ScrollReveal>
 
-      <HoverReveal />
-      <PhotoGallery />
-      <TwelveIntimacy />
-      <Partners />
-      <SparkGenerator />
+      <ScrollReveal><HoverReveal /></ScrollReveal>
+      <ScrollReveal><PhotoGallery /></ScrollReveal>
+      <ScrollReveal><TwelveIntimacy /></ScrollReveal>
+      <ScrollReveal><Partners /></ScrollReveal>
+      <ScrollReveal><SparkGenerator /></ScrollReveal>
 
       {/* Featured in — Moriah luxury brand bar */}
-      <section className="section-padding bg-classic-black text-pearl-white">
+      <ScrollReveal>
+      <section className="section-padding bg-obsidian text-pearl-white">
         <div className="max-w-[1200px] mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-warm-gold mb-8 font-bold">featured in</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-80">
@@ -45,9 +49,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Testimonial — Moriah luxury */}
-      <section className="section-padding bg-cream">
+      <ScrollReveal>
+      <section className="section-padding bg-vellum">
         <div className="max-w-4xl mx-auto">
           <blockquote className="font-display text-4xl md:text-5xl font-normal text-charcoal leading-[1.4]">
             &ldquo;Dee and Josh are the real deal. They helped us actually talk to each other again.&rdquo;
@@ -55,9 +61,11 @@ export default function HomePage() {
           <p className="text-xs uppercase tracking-[0.4em] text-warm-gold mt-8 font-bold">— jess + alex</p>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Quiz — Moriah luxury CTA */}
-      <section className="section-padding bg-charcoal text-pearl-white">
+      <ScrollReveal>
+      <section className="section-padding bg-obsidian text-pearl-white">
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
             <p className="font-display text-4xl md:text-5xl font-normal tracking-tight">
@@ -72,9 +80,11 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Social + Videos */}
-      <section className="section-padding bg-cream border-t border-charcoal/10">
+      <ScrollReveal>
+      <section className="section-padding bg-vellum border-t border-charcoal/10">
         <div className="max-w-xl mx-auto text-center">
           <p className="text-[10px] uppercase tracking-[0.35em] text-charcoal/40 mb-4">follow</p>
           <SocialLinks variant="inline" />
@@ -86,6 +96,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      </ScrollReveal>
     </>
   );
 }
