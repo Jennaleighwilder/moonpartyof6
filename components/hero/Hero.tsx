@@ -7,13 +7,14 @@ const HERO_IMAGE = "/images/hero-couple.png";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      {/* Background: cinematic couple photo */}
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden hero-paper-texture">
+      {/* Background: cinematic couple photo — object-position to avoid cutting off faces */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(120deg, rgba(17,17,17,0.88) 0%, rgba(46,46,46,0.6) 40%, rgba(129,31,31,0.5) 70%, rgba(122,12,24,0.3) 100%), url(${HERO_IMAGE})`,
           backgroundColor: "#111111",
+          backgroundPosition: "center 30%",
         }}
       />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(122,12,24,0.15)_0%,transparent_50%)]" />
@@ -70,7 +71,7 @@ export function Hero() {
           {/* Right: Dee + Josh photo */}
           <div className="hidden lg:flex items-center justify-center animate-float">
             <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-pearl-white/20 shadow-2xl">
-              <img src="/images/hero-couple.png" alt="Dee and Josh Moon" className="w-full h-full object-cover" />
+              <img src="/images/hero-couple.png" alt="Dee and Josh Moon" className="w-full h-full object-cover" style={{ objectPosition: "center 25%" }} />
             </div>
           </div>
         </div>

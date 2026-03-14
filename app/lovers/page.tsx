@@ -114,16 +114,18 @@ export default function LoversPage() {
                   {["A", "B", "C", "D"].map((letter) => {
                     const text = (currentQ as Record<string, string>)[letter];
                     return (
-                      <button
+                      <motion.button
                         key={letter}
                         onClick={() => handleSelect(letter)}
+                        whileHover={{ scale: 1.01, x: 4 }}
+                        whileTap={{ scale: 0.99 }}
                         className="w-full flex items-start gap-6 p-6 rounded-xl border border-pearl-white/10 hover:border-deep-red/40 hover:bg-deep-red/5 text-left transition-all duration-300 group"
                       >
                         <span className="font-display text-deep-red/80 group-hover:text-deep-red shrink-0 text-lg">
                           {letter}.
                         </span>
                         <span className="text-pearl-white/85 leading-relaxed">{text}</span>
-                      </button>
+                      </motion.button>
                     );
                   })}
                 </div>

@@ -5,6 +5,7 @@ import { EmailGreeting } from "@/components/EmailGreeting";
 import { QuickAccessGrid } from "@/components/cards/QuickAccessGrid";
 import { MeetTheMoons } from "@/components/cards/MeetTheMoons";
 import { HoverReveal } from "@/components/HoverReveal";
+import { PhotoGallery } from "@/components/PhotoGallery";
 import { TwelveIntimacy } from "@/components/TwelveIntimacy";
 import { Partners } from "@/components/Partners";
 import { SparkGenerator } from "@/components/spark-generator/SparkGenerator";
@@ -27,6 +28,7 @@ export default function HomePage() {
       </section>
 
       <HoverReveal />
+      <PhotoGallery />
       <TwelveIntimacy />
       <Partners />
       <SparkGenerator />

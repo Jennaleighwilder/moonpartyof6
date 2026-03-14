@@ -27,16 +27,24 @@ export default function DateNightsPage() {
 
       <SparkGenerator variant="editorial" />
 
-      {/* Chapter 2: Where You're Called — wanderlust, vintage, postcard */}
-      <section className="min-h-[50vh] flex flex-col justify-center bg-[#f8f0e6] text-mahogany border-t-2 border-charcoal/10">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-20">
-          <p className="text-xs uppercase tracking-[0.3em] text-mahogany/70">
+      {/* Chapter 2: Where You're Called — travel pic background */}
+      <section
+        className="relative min-h-[55vh] flex flex-col justify-center text-pearl-white border-t-2 border-charcoal/10 overflow-hidden"
+        style={{
+          backgroundImage: "url(/images/gallery-beach.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 40%",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/60 to-charcoal/30" />
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-20">
+          <p className="text-xs uppercase tracking-[0.35em] text-warm-gold font-bold">
             Where You're Called · wanderlust · vintage · postcard
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-normal mt-4 max-w-2xl">
+          <h2 className="font-display text-4xl md:text-5xl font-normal mt-4 max-w-2xl text-pearl-white">
             Where are you being called?
           </h2>
-          <p className="mt-6 text-charcoal/80 text-lg max-w-xl">
+          <p className="mt-6 text-pearl-white/90 text-lg max-w-xl">
             Three questions. One destination. A postcard from your next adventure.
           </p>
         </div>
@@ -46,9 +54,17 @@ export default function DateNightsPage() {
         <TravelQuiz variant="editorial" />
       </section>
 
-      {/* Chapter 3: Lover Lairs — secret spots, editorial grid */}
-      <section className="section-padding bg-classic-black text-pearl-white">
-        <div className="max-w-[1400px] mx-auto">
+      {/* Chapter 3: Lover Lairs — pier pic background */}
+      <section
+        className="relative section-padding text-pearl-white overflow-hidden"
+        style={{
+          backgroundImage: "url(/images/gallery-pier.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 50%",
+        }}
+      >
+        <div className="absolute inset-0 bg-classic-black/85" />
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-20">
           <p className="text-xs uppercase tracking-[0.3em] text-deep-red/70">
             Lover Lairs · secret spots · moon-approved
           </p>

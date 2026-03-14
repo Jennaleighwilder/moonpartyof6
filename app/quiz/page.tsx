@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 // Choose your own adventure — each path has its own visual identity
 const PATHS = [
@@ -59,6 +60,58 @@ const PATHS = [
   },
 ];
 
+function PathCard({ path, index }: { path: (typeof PATHS)[0]; index: number }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <Link href={path.href}>
+      <motion.section
+        ref={ref}
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className={`${path.bg} ${path.accent} group`}
+      >
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div>
+              <motion.span
+                className="text-4xl md:text-5xl opacity-40 group-hover:opacity-70 transition-opacity block"
+                whileHover={{ scale: 1.05 }}
+              >
+                {path.visual}
+              </motion.span>
+              <p className="text-xs uppercase tracking-[0.25em] mt-6 opacity-70">
+                {path.mood}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-normal mt-4 group-hover:italic transition-all">
+                {path.label}
+              </h2>
+              <p className="mt-4 text-base md:text-lg opacity-90 leading-relaxed max-w-md">
+                {path.tagline}
+              </p>
+              <motion.span
+                className={`inline-block mt-8 text-sm font-medium border-b-2 ${path.border} ${path.hover} py-1 transition-all`}
+                whileHover={{ x: 4 }}
+              >
+                {path.cta} →
+              </motion.span>
+            </div>
+            <div className="hidden md:block">
+              <motion.div
+                className={`aspect-[4/3] rounded-2xl border ${path.border} ${path.hover} flex items-center justify-center text-6xl opacity-20 group-hover:opacity-40 transition-all`}
+                whileHover={{ scale: 1.02 }}
+              >
+                {path.visual}
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+    </Link>
+  );
+}
+
 export default function QuizHubPage() {
   return (
     <div className="min-h-screen">
@@ -78,9 +131,9 @@ export default function QuizHubPage() {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-classic-black max-w-3xl leading-[1.15]"
           >
-            Where does it hurt?
+            What&apos;s calling you?
             <br />
-            <span className="italic text-charcoal/90">Where does it want to go?</span>
+            <span className="italic text-charcoal/90">Where do you want to go deeper?</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -88,50 +141,15 @@ export default function QuizHubPage() {
             transition={{ delay: 0.2 }}
             className="mt-8 text-lg text-charcoal/80 max-w-xl"
           >
-            Four paths. Each one a different door. Pick the one that calls you.
+            Four paths. Lovers, travel, spark, compass. Pick the one that calls you.
           </motion.p>
         </div>
       </section>
 
-      {/* Paths — each a distinct magazine spread */}
+      {/* Paths — Popup-style: each a distinct magazine spread with scroll reveal */}
       <div className="divide-y divide-charcoal/10">
         {PATHS.map((path, i) => (
-          <Link key={path.slug} href={path.href}>
-            <motion.section
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`${path.bg} ${path.accent} group`}
-            >
-              <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-24">
-                <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-                  <div>
-                    <span className="text-4xl md:text-5xl opacity-40 group-hover:opacity-70 transition-opacity">
-                      {path.visual}
-                    </span>
-                    <p className="text-xs uppercase tracking-[0.25em] mt-6 opacity-70">
-                      {path.mood}
-                    </p>
-                    <h2 className="font-display text-3xl md:text-4xl font-normal mt-4 group-hover:italic transition-all">
-                      {path.label}
-                    </h2>
-                    <p className="mt-4 text-base md:text-lg opacity-90 leading-relaxed max-w-md">
-                      {path.tagline}
-                    </p>
-                    <span className={`inline-block mt-8 text-sm font-medium border-b-2 ${path.border} ${path.hover} py-1 transition-all`}>
-                      {path.cta} →
-                    </span>
-                  </div>
-                  <div className="hidden md:block">
-                    <div className={`aspect-[4/3] rounded-2xl border ${path.border} ${path.hover} flex items-center justify-center text-6xl opacity-20 group-hover:opacity-40 transition-all`}>
-                      {path.visual}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-          </Link>
+          <PathCard key={path.slug} path={path} index={i} />
         ))}
       </div>
 

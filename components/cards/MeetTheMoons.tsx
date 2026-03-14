@@ -17,7 +17,7 @@ export function MeetTheMoons() {
               src="/images/dee.png"
               alt="Dee Moon"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 768px) 100vw, 50vw"
               onError={() => setDeeError(true)}
             />
@@ -36,7 +36,7 @@ export function MeetTheMoons() {
               src="/images/josh.png"
               alt="Josh Moon"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 768px) 100vw, 50vw"
               onError={() => setJoshError(true)}
             />

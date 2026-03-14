@@ -225,26 +225,52 @@ export function SparkGenerator({ variant = "default" }: { variant?: "default" | 
           ) : (
             <motion.div
               key="result"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
               className={`overflow-hidden rounded-2xl ${
-                isEditorial ? "bg-classic-black/90 border border-pearl-white/20" : "bg-white border border-charcoal/10 shadow-xl"
+                isEditorial ? "bg-classic-black/90 border border-pearl-white/20" : "bg-white border border-warm-gold/20 shadow-[0_20px_60px_rgba(169,111,19,0.15)]"
               }`}
             >
-              {/* Event-invite style header */}
+              {/* Popup-style event hero — gradient, CTAs upfront */}
               <div
-                className="px-8 py-12 text-center"
+                className="relative px-8 py-14 md:py-16 text-center min-h-[280px] flex flex-col justify-end"
                 style={{
-                  background: "linear-gradient(135deg, rgba(129,31,31,0.95) 0%, rgba(17,17,17,0.98) 100%)",
+                  background: "linear-gradient(to top, rgba(17,17,17,0.98) 0%, rgba(75,31,31,0.9) 35%, rgba(122,12,24,0.7) 70%, rgba(169,111,19,0.4) 100%)",
                   color: "#F5F5F5",
                 }}
               >
-                <p className="text-xs uppercase tracking-[0.2em] text-pearl-white/70 mb-2">Your Date Night</p>
-                <h3 className="font-display text-3xl font-semibold mb-2">{result!.title}</h3>
-                <p className="text-pearl-white/90 italic">{result!.tagline}</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-pearl-white/80 mb-3 font-bold">Your Date Night</p>
+                <h3 className="font-display text-3xl md:text-4xl font-normal mb-3 leading-tight" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}>
+                  {result!.title}
+                </h3>
+                <p className="text-lg md:text-xl text-pearl-white/95 italic mb-6" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.6)" }}>
+                  {result!.tagline}
+                </p>
                 {result!.areaHint && (
-                  <p className="mt-2 text-sm uppercase tracking-wider text-deep-red/90">Moon-approved · {result!.areaHint}</p>
+                  <p className="text-sm uppercase tracking-[0.2em] text-warm-gold/95 mb-6 font-medium">Moon-approved · {result!.areaHint}</p>
                 )}
+                {/* Popup-style CTA row: Add to Calendar + Share */}
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <Link
+                    href={shareUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-warm-gold text-pearl-white font-bold tracking-[0.25em] uppercase text-sm rounded-lg hover:bg-gold-light transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+                    Share with your love
+                  </Link>
+                  <a
+                    href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(result!.title)}&dates=20260101T190000/20260101T210000&details=${encodeURIComponent(`${result!.tagline}\n\n${result!.desc}\n\nText: "${result!.text}"`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 border-2 border-pearl-white/50 text-pearl-white font-bold tracking-[0.2em] uppercase text-sm rounded-lg hover:bg-pearl-white/10 transition-all"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    Add to Calendar
+                  </a>
+                </div>
               </div>
 
               <div className={`p-8 ${isEditorial ? "text-pearl-white" : ""}`}>

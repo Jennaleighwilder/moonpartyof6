@@ -19,6 +19,21 @@ const CARDS = [
     text: "josh's take on showing up as a husband without losing the romance.",
     image: "/images/gallery-hallway.png",
   },
+  {
+    title: "casual moments",
+    text: "the everyday magic — coffee, kids, and the in-between that makes marriage real.",
+    image: "/images/gallery-casual.png",
+  },
+  {
+    title: "travel together",
+    text: "beach days, pier sunsets — adventures that bring you closer.",
+    image: "/images/gallery-beach.png",
+  },
+  {
+    title: "date night vibes",
+    text: "dressed up or cozy — the kind of nights that remind you why you chose each other.",
+    image: "/images/gallery-pier.png",
+  },
 ];
 
 export function HoverReveal() {
@@ -28,7 +43,7 @@ export function HoverReveal() {
         <p className="text-center text-xs uppercase tracking-[0.4em] text-warm-gold mb-6 font-bold">
           lean in closer
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {CARDS.map((card) => (
             <RevealCard key={card.title} title={card.title} text={card.text} image={card.image} />
           ))}
@@ -55,7 +70,7 @@ function RevealCard({ title, text, image }: { title: string; text: string; image
       `}
     >
       <div className="absolute inset-0">
-        <Image src={image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+        <Image src={image} alt="" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
       </div>
       <div className="relative z-10 p-8 flex flex-col justify-end min-h-[280px]">

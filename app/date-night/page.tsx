@@ -50,14 +50,25 @@ function DateNightCardContent() {
       className="min-h-screen bg-pearl-white"
       style={{ fontFamily: "var(--font-playfair), serif" }}
     >
-      {/* Popup/Launchpad-style event hero — gradient, CTA row */}
+      {/* Popup-style event hero — image + gradient, Ken Burns feel */}
       <section
-        className="relative min-h-[55vh] flex flex-col justify-end px-6 md:px-12 pb-20 md:pb-28"
-        style={{
-          background: "linear-gradient(to top, rgba(17,17,17,0.98) 0%, rgba(75,31,31,0.9) 40%, rgba(122,12,24,0.6) 100%)",
-          color: "#F5F5F5",
-        }}
+        className="relative min-h-[60vh] flex flex-col justify-end px-6 md:px-12 pb-20 md:pb-28 overflow-hidden"
       >
+        <div className="absolute inset-0 ken-burns">
+          <img
+            src="/images/hero-couple.png"
+            alt=""
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 25%" }}
+          />
+        </div>
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to top, rgba(17,17,17,0.98) 0%, rgba(75,31,31,0.9) 35%, rgba(122,12,24,0.6) 70%, rgba(169,111,19,0.3) 100%)",
+          }}
+        />
+        <div className="relative z-10" style={{ color: "#F5F5F5" }}>
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.2em] text-pearl-white/70 mb-4">Your Date Night</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-4">
@@ -87,6 +98,7 @@ function DateNightCardContent() {
               {shareCopied ? "✓ Copied!" : "Share with your love"}
             </button>
           </div>
+        </div>
         </div>
       </section>
 

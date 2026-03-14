@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const CARDS = [
   { href: "/our-story", label: "our story", title: "how we met", desc: "blended family, second chance, doing marriage differently. romance, role play, the hard work.", badge: "read more →", comingSoon: false },
-  { href: "/quiz", label: "choose your path", title: "where does it hurt?", desc: "lovers · travel · spark · compass. four doors. pick the one that calls you.", badge: "enter →", comingSoon: false },
+  { href: "/quiz", label: "choose your path", title: "what's calling you?", desc: "lovers · travel · spark · compass. four paths. pick the one that calls you.", badge: "enter →", comingSoon: false },
   { href: "/resources", label: "free resource", title: "date night guide", desc: "12 at-home ideas. the spicy texts. the slow mornings. coming june 2026.", badge: "coming soon", comingSoon: true },
   { href: "/resources#intimacy", label: "signature", title: "12 forms of intimacy", desc: "emotional · physical · spiritual · body, psyche, soul.", badge: "preview ↓", comingSoon: false },
 ];

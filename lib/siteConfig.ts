@@ -67,3 +67,10 @@ export const JOSH_SOCIALS = [
   { label: "Instagram", href: "https://instagram.com/moonpartyof6" },
   { label: "TikTok", href: "https://tiktok.com/@moonpartyof6" },
 ];
+
+/** TikTok profile — add popular video IDs here as they're identified */
+export const TIKTOK = {
+  profile: "https://tiktok.com/@moonpartyof6",
+  /** Popular videos — add video IDs when known, e.g. "7123456789" from tiktok.com/@moonpartyof6/video/7123456789 */
+  popularVideos: [] as string[],
+};
