@@ -35,7 +35,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-normal text-pearl-white mb-6 leading-[1.08] tracking-[-0.02em]"
+              className="headline-editorial font-display text-5xl md:text-6xl lg:text-7xl font-normal text-pearl-white mb-6 leading-[1.08] tracking-[-0.02em]"
             >
               intentional marriage.
               <br />
@@ -78,7 +78,7 @@ export function Hero() {
           </div>
           {/* Right: different photo — not same as background */}
           <div className="hidden lg:flex items-center justify-center animate-float">
-            <div className="w-full aspect-[4/3] overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] image-film-still">
+            <div className="museum-glass w-full aspect-[4/3] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] image-film-still">
               <img src={HERO_CARD} alt="Dee and Josh Moon" className="w-full h-full object-cover object-top" />
             </div>
           </div>

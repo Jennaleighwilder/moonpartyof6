@@ -176,4 +176,33 @@ html.reduce-motion .ken-burns {
       opacity: 1;
     }
   }
+
+  /* CONTRAST RULES — dark backgrounds: Pearl text, headlines pop */
+  [data-room]:not([data-room="vellum"]) body {
+    color: rgba(253, 252, 251, 0.9);
+  }
+  [data-room]:not([data-room="vellum"]) .headline-editorial {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  /* Metadata: high-contrast Gold or White */
+  .text-meta-gold {
+    color: #D4AF37;
+  }
+  [data-room="vellum"] body,
+  [data-room="vellum"] main {
+    color: #252421;
+  }
+
+  /* MUSEUM GLASS — images behind glass: hover scale, brightness, champagne border */
+  .museum-glass {
+    overflow: hidden;
+    border: 0.5px solid rgba(243, 229, 171, 0.4);
+  }
+  .museum-glass img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+  .museum-glass:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
 }

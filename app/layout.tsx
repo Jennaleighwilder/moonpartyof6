@@ -8,6 +8,7 @@ import { ChatButton } from "@/components/ChatButton";
 import { NeedleCursor } from "@/components/NeedleCursor";
 import { AmbientBackground } from "@/components/AmbientBackground";
 import { BackgroundManager } from "@/components/BackgroundManager";
+import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 
 const bodoniModa = Bodoni_Moda({
   variable: "--font-bodoni",
@@ -54,14 +55,16 @@ export default function RootLayout({
       className={`${bodoniModa.variable} ${montserrat.variable} ${robotoSlab.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans bg-obsidian text-pearl-white antialiased relative min-h-screen">
-        <BackgroundManager />
-        <AmbientBackground />
-        <NeedleCursor />
-        <Navigation />
-        <main>{children}</main>
-        <FloatingStartHere />
-        <ChatButton />
-        <Footer />
+        <SmoothScrollProvider>
+          <BackgroundManager />
+          <AmbientBackground />
+          <NeedleCursor />
+          <Navigation />
+          <main>{children}</main>
+          <FloatingStartHere />
+          <ChatButton />
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

@@ -33,7 +33,7 @@ export function PhotoGallery() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.7 }}
               style={{ rotate: item.rotate, zIndex: i % 3 === 0 ? 2 : 1, clipPath: i % 3 === 0 ? "polygon(1% 0%, 99% 1%, 100% 99%, 0% 98%)" : undefined }}
-              className={`relative aspect-[4/5] overflow-hidden cut-out tap-scale rounded-sm ${i % 4 === 0 ? "md:-mt-8 md:ml-4" : ""} ${i === 2 ? "md:mt-4" : ""}`}
+              className={`museum-glass relative aspect-[4/5] cut-out tap-scale rounded-sm ${i % 4 === 0 ? "md:-mt-8 md:ml-4" : ""} ${i === 2 ? "md:mt-4" : ""}`}
             >
               <Image
                 src={item.src}

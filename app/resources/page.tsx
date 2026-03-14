@@ -9,8 +9,8 @@ const FREE_RESOURCES = [
 
 export default function ResourcesPage() {
   return (
-    <div>
-      <section className="section-padding bg-pearl-white">
+    <div className="min-h-screen bg-[#F5F2E9] text-charcoal">
+      <section className="section-padding">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display text-4xl font-semibold mb-6">Free Resources</h1>
           <p className="text-xl text-charcoal mb-12">
@@ -30,7 +30,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section id="intimacy" className="section-padding bg-white border-t border-charcoal/10 scroll-mt-24">
+      <section id="intimacy" className="section-padding border-t border-charcoal/10 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-semibold mb-4">12 Types of Intimacy</h2>
           <p className="text-charcoal mb-6">
@@ -40,7 +40,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section id="at-home" className="section-padding bg-pearl-white scroll-mt-24">
+      <section id="at-home" className="section-padding scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-semibold mb-4">Date Night at Home Guide</h2>
           <p className="text-charcoal mb-6">
@@ -49,7 +49,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section id="florida" className="section-padding bg-white border-t border-charcoal/10 scroll-mt-24">
+      <section id="florida" className="section-padding border-t border-charcoal/10 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-semibold mb-4">FL Date Night Guide</h2>
           <p className="text-charcoal mb-6">
@@ -59,7 +59,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section id="7day" className="section-padding bg-pearl-white scroll-mt-24">
+      <section id="7day" className="section-padding scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl font-semibold mb-4">7-Day Reset</h2>
           <p className="text-charcoal mb-6">

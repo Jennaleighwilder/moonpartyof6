@@ -14,7 +14,7 @@ export default function MrMoonPage() {
     <div>
       <section className="section-padding bg-cream">
         <div className="max-w-3xl mx-auto">
-          <div className="aspect-square max-w-md mx-auto rounded-lg mb-8 overflow-hidden bg-charcoal/10 relative flex items-center justify-center">
+          <div className="museum-glass aspect-square max-w-md mx-auto rounded-lg mb-8 bg-charcoal/10 relative flex items-center justify-center">
             {!imgError ? (
               <Image
                 src={JOSH_IMAGE}
